@@ -9,5 +9,5 @@ redirect_from:
 
 {% include base_path %}
 
-[Click on this link to view the current CV](vetpsk.github.io/_pages/resume.pdf)
+[Click on this link to view the current CV](resume.pdf)
 
