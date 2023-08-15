@@ -11,6 +11,11 @@ author_profile: true
 
 # Relevant Publications
 
+## Dutch dairy farmers’ perspectives on culling reasons and strategies
+PS Kulkarni, MCM Mourits, J Slob, AMB Veldhuis, M Nielen, H Hogeveen, G van Schaik, W Steeneveld
+Preventive Veterinary Medicine, (In press),
+[View](https://doi.org/10.1016/j.prevetmed.2023.105997)
+
 ## Association between dairy farm performance indicators and culling rates under policy driven herd size constraints
 PS Kulkarni, MCM Mourits, M Nielen, W Steeneveld
 Frontiers in Veterinary Science 10 (10:1062891), 293
