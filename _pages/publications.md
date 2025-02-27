@@ -31,4 +31,10 @@ PS Kulkarni, F Biemans, MCM de Jong, P Bijma
 Journal of Animal Breeding and Genetics 138 (6), 629-642
 [View](https://onlinelibrary.wiley.com/doi/pdf/10.1111/jbg.12635)
 
+# Books/ Theses
+## Dairy cattle replacement under changing agri-environmental policies
+Pranav S. Kulkarni
+Wageningen University Publication, PhD thesis (2024) Wageningen
+ISBN 978-94-6447-990-4 DOI: 10.18174/642838 
+[View/ Download Free](https://escholarship.org/content/qt246298qt/qt246298qt_noSplash_901536be2763fe6084f6b43f7abc9b70.pdf)
 
