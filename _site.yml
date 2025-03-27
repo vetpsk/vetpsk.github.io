@@ -1,0 +1,12 @@
+name: "Personal Website"
+navbar:
+  title: "Pranav S. Kulkarni"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "CV"
+      href: about.html
+    - text: "Publications"
+      href: publications.html
+    - text: "Talks"
+      href: talks.html
