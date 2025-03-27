@@ -1,11 +1,5 @@
 ---
 title: "ISVEE 2024"
-collection: talks
-type: "Oral Presentation"
-permalink: /talks/11/13/24-isvee24
-venue: "Sydney, Australia"
-date: 11/13/24
-location: "Sydney, Australia"
 ---
 
 [More information here](https://isvee2024-c10000.eorganiser.com.au/index.php?r=programWebService/newIndex#!/event)

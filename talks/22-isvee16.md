@@ -1,11 +1,5 @@
 ---
 title: "ISVEE 2022"
-collection: talks
-type: "Oral Presentation"
-permalink: /talks/8/20/22-isvee16
-venue: "Halifax, Canada"
-date: 8/20/22
-location: "Halifax, Canada"
 ---
 
 [More information here](http://dx.doi.org/10.13140/RG.2.2.10290.68802)

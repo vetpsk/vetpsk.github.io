@@ -1,11 +1,5 @@
 ---
 title: "ISESSAH 2023"
-collection: talks
-type: "Oral Presentation"
-permalink: /talks/6/14/23-isessah23
-venue: "Helsinki, Finland"
-date: 6/14/23
-location: "Helsinki, Finland"
 ---
 
 [More information here](https://www.isessah.com/wp-content/uploads/2023/06/ISESSAH-2023-final-programme.pdf)

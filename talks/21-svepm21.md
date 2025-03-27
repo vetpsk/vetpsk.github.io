@@ -1,11 +1,5 @@
 ---
 title: "SVEPM 2021"
-collection: talks
-type: "Oral Presentation"
-permalink: /talks/3/24/21-svepm21
-venue: "Toulouse, France"
-date: 3/24/21
-location: "Toulouse, France"
 ---
 
 [More information here](https://www.researchgate.net/publication/369236662_DEVELOPMENT_OF_A_LOG-NORMAL_ACCELERATED_FAILURE_TIME_MODEL_FOR_SURVIVAL_OF_DUTCH_DAIRY_COWS_UNDER_ALTERING_AGRICULTURAL_POLICY)

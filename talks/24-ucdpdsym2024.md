@@ -1,11 +1,5 @@
 ---
 title: "UCDavis Postdoctoral Symposium 2024"
-collection: talks
-type: "Oral Presentation"
-permalink: /talks/4/26/24-ucdpdsym2024
-venue: "Davis, California, USA"
-date: 4/26/24
-location: "Davis, California, USA"
 ---
 
 [More information here](https://postdocs.ucdavis.edu/postdoctoral-research-symposium-2023)
