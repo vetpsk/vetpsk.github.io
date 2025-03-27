@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Conferences/ Talks</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Pranav S. Kulkarni</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">CV</a>
+</li>
+<li>
+  <a href="publications.html">Publications</a>
+</li>
+<li>
+  <a href="talks.html">Talks</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Conferences/ Talks</h1>
+
+</div>
+
+
+<p><br> <br></p>
+<div id="isvee-2024" class="section level2">
+<h2>ISVEE 2024</h2>
+<div id="sydney-australia" class="section level3">
+<h3>Sydney, Australia</h3>
+<p>Oral presentation</p>
+<details>
+<p><a href="https://isvee2024-c10000.eorganiser.com.au/index.php?r=programWebService/newIndex#!/event">More information here</a></p>
+<p>Introduction: Viral hemorrhagic fevers caused by New World Arenaviruses have a high potential burden in susceptible human populations. The spillover risk from rodent reservoirs to humans is significantly affected by rodent distribution and movement patterns of humans. The aim of this study was to (i) model the climate-change driven risk of zoonotic spillover of New World arenaviruses and (ii) estimate the projected burdens of these outbreaks in the context of various climate scenarios.
+Methods: Ensemble Species Distribution Models (SDMs) were trained on current bioclimatic and landscape data of the known rodent reservoirs of New World Arenaviruses. By combining the SDMs with the human population, current and predicted hotspots for the zoonotic outbreak were investigated. Shared Socio-economic Pathways (SSP) namely, SSP 2 and 5 were taken into consideration to make projections for years 2050 and 2070. Using this information combined with comparable outbreaks, a stochastic model was developed for estimating the economic and health burdens.
+Results: SDMs of rodent reservoirs of Junin virus in Argentina and Guanarito virus in Venezuela and Colombia yielded high precision in predicting species habitats (83% to 91%). Projections of SDM in SSP2 showed some persistent hotspots for spillover in both 2050 (see Figure) and 2070. Variability in predicted economic burden depends on the validity of economic inputs.
+Discussion: Our study provides valuable insights into potential shifts of risk patterns by leveraging machine learning. Predicting the changes in spillover hotspots, the models help understand expected burden and hence will be helpful to develop policy based on both economic and health burden.
+Conclusion: Climate change will facilitate the risk of arenaviral infections to newer regions, changing the economic burden. The framework of the study has potential to serve as a climate-driven, predicted risk tool for rodent-borne zoonotic outbreaks and to gain insights in their economic burden.</p>
+
+</details>
+<p><br><br></p>
+</div>
+</div>
+<div id="eeid-2024" class="section level2">
+<h2>EEID 2024</h2>
+<div id="stanford-ca-usa" class="section level3">
+<h3>Stanford, CA, USA</h3>
+<p>Poster presentation</p>
+<details>
+<p><a href="https://kingcenter.stanford.edu/events/conferences-workshops/2024-ecology-and-evolution-infectious-diseases-eeid-conference">More information here</a></p>
+<p>New World Arenaviruses (NWA) cause viral hemorrhagic fever in humans, with high potential burden in terms of mortality and morbidity in susceptible populations. Primarily a spillover risk from rodent reservoirs to humans, the risk of infection is significantly affected by distribution of the rodent hosts and the movement patterns of humans. The aim of this study was to model the climate-change driven risk of zoonotic spillover of NWA by combining (i) species distribution modelling (SDM) of the rodent reservoir species (Calomys musculinus, Zygodotomys brevicauda and Sigmodon alstoni) with (ii) disease transmission modelling in humans. SDMs were developed using ensembles of four tree-based machine learning techniques trained on current bioclimatic and landscape data of the area under study. By combining the SDM with spatial information on the human population density of the area, current hotspots for potential outbreaks were identified. Shared Socioeconomic Pathways (SSP) of moderate and extremely negative type (SSP2 and SSP5 resp.) projections of climate change for year 2050 and 2070 were used as future scenarios for climate-change. Based on the two scenarios, predicted changes in the risk patterns and hotspots for zoonotic outbreaks were investigated. SDMs of rodent reservoirs of Junin virus in Argentina and Guanarito virus in Venezuela and Colombia yielded high precision in predicting species habitats ranging from 83% to 91%. Our study provides valuable insights into potential shifts in rodent habitat suitability and patterns. The study demonstrated that the distributions of reservoir species and the susceptible human population are sensitive to the changes in the climactic conditions over time. The framework of the study has potential to serve as a climate-driven, predicted risk modelling tool for rodent-borne zoonotic outbreaks globally and to gain insights of their economic burden.</p>
+
+</details>
+<p><br><br></p>
+</div>
+</div>
+<div id="ucdavis-postdoc-symposium-2024" class="section level2">
+<h2>UCDavis Postdoc Symposium 2024</h2>
+<div id="davis-ca-usa" class="section level3">
+<h3>Davis, CA, USA</h3>
+<p>Oral presentation</p>
+<details>
+<p><a href="https://postdocs.ucdavis.edu/postdoctoral-research-symposium-2023">More information here</a></p>
+<p>New World Arenaviruses (NWA) cause viral hemorrhagic fever in humans, with high potential burden in terms of mortality and morbidity in susceptible populations. Primarily a spillover risk from rodent reservoirs to humans, the risk of infection is significantly affected by distribution of the rodent hosts and the movement patterns of humans. The aim of this study was to model the climate-change driven risk of zoonotic spillover of NWA by species distribution modelling (SDM) of the rodent reservoir species (Calomys musculinus, Zygodotomys brevicauda and Sigmodon alstoni. SDMs were developed using ensembles of four tree-based machine learning techniques trained on current bioclimatic and landscape data of the area under study. Shared Socioeconomic Pathways (SSP) of moderate and extremely negative type (SSP2 and SSP5 resp.) projections of climate change for year 2050 and 2070 were used as future scenarios for climate-change. Based on the two scenarios, predicted changes in the risk patterns and hotspots for zoonotic outbreaks were investigated. SDMs of rodent reservoirs of Junin virus in Argentina and Guanarito virus in Venezuela and Colombia yielded high precision in predicting species habitats ranging from 83% to 91%. Our study provides valuable insights into potential shifts in rodent habitat suitability and patterns.</p>
+
+</details>
+<p><br><br></p>
+</div>
+</div>
+<div id="isessah-2023" class="section level2">
+<h2>ISESSAH 2023</h2>
+<div id="helsinki-finland" class="section level3">
+<h3>Helsinki, Finland</h3>
+<p>Oral presentation</p>
+<details>
+<p><a href="https://www.isessah.com/wp-content/uploads/2023/06/ISESSAH-2023-final-programme.pdf">More information here</a></p>
+<p>Context
+In recent years, environmental policies, especially in North-western European countries have put pressure on the total livestock on a dairy farm. On closed dairy farms this primarily has resulted in a reduction of the heifer rearing unit to maintain the production unit. The economic consequences of constrained replacement heifer supply on herd level have not been investigated.
+Objective
+The objective of this study is to study on herd level the economic impact of suboptimal replacement decisions due to a constrained replacement heifer supply.
+Methods
+In this study, we combine a single-cow MDP (Markov Decision Process) optimization model with dairy herd dynamics simulation of 10 years to account for the interdependency among dairy cows within the herd of 100 cows. Besides the base scenario of following optimal replacement policy, we simulated three input scenarios of constrained, excess, and variable replacement heifer supply.
+Results and Conclusion
+In the base scenario, optimal replacement policy resulted in a herd gross margin of Û155,108, 11% voluntary replacement rate, 24% involuntary disposal rate annually for a herd of 100 cows. Constrained as well as excess heifer supply resulted in lower gross margins of Û85,878 and Û138,406 respectively, compared to the base scenario. Constrained heifer supply also resulted in 39% reduction of herd size, involuntary disposal of 17.5% and no voluntary replacements (0.1%) on average per year. Variable heifer supply scenario resulted in lower gross margins (Û115,127), lower voluntary replacement rate (4%), highest involuntary disposal rate (28%) but did not result in reduction of herd size, compared to the base scenario.
+In conclusion, we developed a combination of cow level optimization with a herd level simulation to study the economic impacts of constrained replacement heifer supply. We found that severely constrained, excess, and variable heifer supply result in reduced herd average gross margin.
+Significance
+Optimization replacement policy in case of limited heifer availability requires an inter-cow comparison to determine which cows need to be replaced first as this study shows. By demonstrating a simplified approach of combining individual cow optimization with herd dynamics simulation, we accounted for the inter-dependencies within herd. Such an approach can be instrumental in studying environmental impacts, longevity, and welfare of cows when heifer supply is constrained on a herd level.</p>
+
+</details>
+<p><br><br></p>
+</div>
+</div>
+<div id="veec-2022" class="section level2">
+<h2>VEEC 2022</h2>
+<div id="wageningen-netherlands" class="section level3">
+<h3>Wageningen, Netherlands</h3>
+<p>Oral presentation</p>
+<details>
+<p><a href="http://dx.doi.org/10.13140/RG.2.2.17001.57447">More information here</a></p>
+<p>Recently, culling and replacement of dairy cattle has received a lot of attention in relation to the improvement of health and longevity of the producing animals. Further research into the perspectives of Dutch dairy farmers behind their culling decisions and strategies, their intentions to alter these strategies in near future was needed. The aim of this study was to determine the culling reasons for Dutch dairy cattle, identify farmersÕ culling strategies and if present, determine their intentions regarding alteration of indicated culling strategies. To this end, an online survey questionnaire was distributed nationally among the dairy farmers in the Netherlands and reported responses were analyzed. The body of the survey questionnaire consisted of four parts namely, (1) questions on recently culled primiparous and multiparous cows and frequent culling reasons, (2) statements and questions on culling strategies of the dairy farmers if present, (3) statements regarding intentions of respondents to alter their existing culling strategy, and (4) general questions regarding farm characteristics. It was shown that the most frequent culling reasons were related to problems with reproduction, udder health and claw health. Farmers had differences in reasons for culling primiparous and multiparous cows in the herd. Responses indicated that Dutch dairy farmers do consider formulating culling strategies based on certain rules of thumb involving most common culling reasons. Majority of the respondents also reported an intention to reduce the culling rate for better economic gain in the immediate future. On the other hand, the culling reasons as well as farm specific characteristics weak or no associations with the responses to culling strategy and intention statements. Self-reported culling rate of the farm suggested that farmers did not have a lot of room to decide when culling a cow considering lack of surplus replacement stock. This was also reflected in the respondentsÕ reporting that most culling decisions on their farm were considered unavoidable and they did not intend to alter the amount of replacement stock reared to reduce the culling rate. In conclusion, it was shown that Dutch dairy farmers generally cull cows for biological reasons (reproduction, udder, and claw health) although they have long term culling strategies. Therefore, whether longevity can be improved by altering culling rate, if most culling is unavoidable, remains to be an issue for the dairy industry.</p>
+
+</details>
+<p><br><br></p>
+</div>
+</div>
+<div id="isvee-2022" class="section level2">
+<h2>ISVEE 2022</h2>
+<div id="halifax-canada" class="section level3">
+<h3>Halifax, Canada</h3>
+<p>Oral presentation</p>
+<details>
+<p><a href="http://dx.doi.org/10.13140/RG.2.2.10290.68802">More information here</a></p>
+<p>In the past decade there have been several changes in agricultural policy, affecting the culling in the Dutch dairy sector (e.g., abolishment of milk quota, phosphate regulations). The aim of this study was to analyse the survival of dairy cows on commercial Dutch dairy farms in response to these national policy changes. An Accelerated Failure Time model with survival intervals of weeks between test-days of the Milk Production Registration was applied. The data included 5,289,957 milk producing cows from 14,618 commercial dairy herds collected between 2009 and 2019. The associated cow-level risk factors for culling such as relative milk production, parities, number of inseminations (INS), fat-protein-ratio in early lactation, somatic cell count (SCC), were fitted in the model. Along with these, a factor representing three target policy periods, namely Milk Quota period (MQ), Post-Milk Quota period (PMQ) and Phosphate regulation period (PH) was fitted. The total culling events (x 1000) varied between 232-245 in MQ, 230-300 in PMQ and 287-338 in PH as seen in the figure. The median survival of the cows decreased by 2.7 and 15.3 weeks in PMQ and PH, respectively, compared to MQ. Risk factors such as relative milk production, parity, INS, and high fat-protein-ratio were positively associated whereas SCC and low fat-protein-ratio were negatively associated with survival time in all three policy periods. In conclusion, the survival age of cows was influenced by the agricultural policy changes and the association of cow-level risk factors for culling was consistent across the three policy periods.</p>
+
+</details>
+<p><br><br></p>
+</div>
+</div>
+<div id="isessah-2022" class="section level2">
+<h2>ISESSAH 2022</h2>
+<div id="halifax-canada-1" class="section level3">
+<h3>Halifax, Canada</h3>
+<p>Poster presentation</p>
+<details>
+<p><a href="http://dx.doi.org/10.13140/RG.2.2.16372.42885">More information here</a></p>
+<p>This is There is little known about the reasons for Dutch dairy culling decisions. The aim of the study was to identify the important reasons for culling producing cows, understand the culling strategies applied by Dutch farmers and their intentions of altering these strategies. An online survey was distributed on a national network of dairy farmers. This survey consisted of four parts, namely, farm characteristics (herd size, milking system, etc.), reasons for culling cows (primiparous and multiparous), strategies of culling and the intentions of farmers to alter their current strategy in the future. After collecting the responses over one month in 2021, descriptive analyses were performed. Of 176 respondents, 122 completed majority of the survey. Respondents had an average herd size of 128 cows. The average number of culled cows was 21 with an average herd age of 5.4 years. Of the reported reasons for recently culled primiparous cows, 34.4% and 18.9% were due to reproductive failure and low milk, respectively. In multiparous cow culling, 46.7%, 29.2% and 28.8% reported reproductive failure, presence of mastitis and, lameness as reasons respectively. For all cows, the least frequent reasons were available replacements, unwanted behaviour, and udder conformation. Regarding the culling strategies, 72% respondents reported that they adopted a clear culling plan. 80% of the respondents said that their culling decisions were unavoidable. 62.6% and 53% of respondents reported that they did not intend to alter their culling strategy for primiparous and multiparous cows respectively. Of others, 65% intended to decrease overall culling. 73% intended to alter their culling strategy for economic gain. In conclusion, most important reasons for culling of Dutch dairy cows were reproductive failure and presence of production diseases (mastitis and lameness). Most of the respondents followed specific culling strategies without intentions of altering it in the future. a description of your talk, which is a markdown files that can be all markdown-ified like any other post. Yay markdown!</p>
+
+</details>
+<p><br><br></p>
+</div>
+</div>
+<div id="svepm-2021" class="section level2">
+<h2>SVEPM 2021</h2>
+<div id="tolouse-online" class="section level3">
+<h3>Tolouse/ Online</h3>
+<p>Oral presentation</p>
+<details>
+<p><a href="https://www.researchgate.net/publication/369236662_DEVELOPMENT_OF_A_LOG-NORMAL_ACCELERATED_FAILURE_TIME_MODEL_FOR_SURVIVAL_OF_DUTCH_DAIRY_COWS_UNDER_ALTERING_AGRICULTURAL_POLICY">More information here</a></p>
+<p>Changes in agricultural policy such as milk-quota abolishment impact herd size and might influence the culling decisions of dairy farmers. The purpose of this study was to develop a modelling strategy for studying the relevant cow-level risk factors for survival of Dutch dairy cows representing production, reproduction and metabolic health performances under perturbations due to agricultural policy changes. An interval-censored Accelerated Failure Time (AFT) model was developed using the data from a large national level database including observations on time-varying relevant risk factors under three different dairy policy periods between 2009 and 2019. Results show that the productive lifetime survival of dairy cows reduced over time and changed under the influence of different policies. However, the relevance of associated cow-level risk factors remained the same.</p>
+
+</details>
+<p><br><br></p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
