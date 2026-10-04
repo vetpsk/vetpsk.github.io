@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pranav S. Kulkarni, veterinary epidemiologist at UC Davis</title>
+<meta name="description" content="Pranav S. Kulkarni is a veterinary epidemiologist at UC Davis who models how climate change shifts the risk of diseases jumping from animals to people.">
+<meta property="og:title" content="Pranav S. Kulkarni, veterinary epidemiologist">
+<meta property="og:description" content="Modeling how a changing climate moves zoonotic disease risk. UC Davis Weill School of Veterinary Medicine.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐭</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4f6f3; --ink:#14232a; --muted:#56676c; --rule:#d3dad5;
+  --accent:#1b6f6a; --accent-ink:#ffffff; --tag:#dbe9e5;
+  --sans:"Schibsted Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --measure:68ch;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0f181b; --ink:#e4ebe8; --muted:#9db0b2; --rule:#26363a;
+    --accent:#56c2b5; --accent-ink:#0f181b; --tag:#1b2f31;
+  }
+}
+:root[data-theme="dark"]{--paper:#0f181b; --ink:#e4ebe8; --muted:#9db0b2; --rule:#26363a; --accent:#56c2b5; --accent-ink:#0f181b; --tag:#1b2f31;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+h1,h2,h3,.sans{font-family:var(--sans)}
+h2{font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.15;letter-spacing:-.015em;margin:0 0 .5rem;font-weight:600}
+h3{font-size:1.15rem;line-height:1.3;margin:0 0 .35rem;font-weight:600}
+p{margin:0 0 1rem;max-width:var(--measure)}
+.lede{color:var(--muted);font-size:1.05rem}
+
+/* header */
+.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:56px}
+.brand{font-family:var(--sans);font-weight:600;color:var(--ink);text-decoration:none;white-space:nowrap}
+.top nav{display:flex;gap:clamp(.75rem,2vw,1.5rem);overflow-x:auto;scrollbar-width:none}
+.top nav::-webkit-scrollbar{display:none}
+.top nav a{font-family:var(--sans);font-size:.92rem;color:var(--muted);text-decoration:none;white-space:nowrap;padding:.4rem 0}
+.top nav a:hover{color:var(--ink)}
+@media (max-width:640px){.brand{display:none}.top nav{width:100%;justify-content:space-between}}
+
+/* hero */
+.hero{padding:clamp(2.5rem,7vw,5.5rem) 0 clamp(2rem,5vw,4rem)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.hero h1{font-size:clamp(2.2rem,5vw,3.7rem);line-height:1.02;letter-spacing:-.03em;font-weight:600;margin:0 0 1.25rem;max-width:15ch}
+.who{font-family:var(--sans);color:var(--muted);font-size:1rem;margin:0 0 1.5rem}
+.who strong{color:var(--ink);font-weight:600}
+.hero p.intro{font-size:1.12rem}
+.actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.75rem}
+.btn{font-family:var(--sans);font-size:.95rem;font-weight:500;display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1.05rem;border-radius:999px;text-decoration:none;border:1px solid var(--rule);color:var(--ink);background:transparent}
+.btn:hover{border-color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.figure{position:relative;aspect-ratio:640/560}
+.figure svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.iso{fill:none;stroke-width:1.4;opacity:.85}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .iso{opacity:.75}}
+@media (prefers-reduced-motion:no-preference){
+  .iso{stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 2.2s cubic-bezier(.3,.6,.2,1) forwards;animation-delay:calc(var(--i) * 70ms)}
+  @keyframes draw{to{stroke-dashoffset:0}}
+}
+.portrait{position:absolute;left:51.5%;top:51%;width:42%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;background:var(--tag);box-shadow:0 0 0 6px var(--paper)}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait .initials{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--sans);font-weight:600;font-size:clamp(1.5rem,4vw,2.6rem);color:var(--accent)}
+.figcap{font-family:var(--sans);font-size:.78rem;color:var(--muted);text-align:right;margin-top:.25rem}
+@media (max-width:820px){
+  .hero .wrap{grid-template-columns:1fr}
+  .figure{max-width:420px;width:100%;margin:0 auto;order:-1}
+  .figcap{text-align:center}
+}
+
+/* sections */
+section{padding:clamp(3rem,7vw,5rem) 0;border-top:1px solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr);gap:.25rem;margin-bottom:2rem}
+
+/* featured paper */
+.feature{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,4vw,3.5rem)}
+@media (max-width:860px){.feature{grid-template-columns:1fr}}
+.paper-title{font-family:var(--sans);font-size:clamp(1.35rem,2.3vw,1.7rem);line-height:1.2;letter-spacing:-.01em;font-weight:600;margin:0 0 .5rem}
+.cite{font-family:var(--sans);font-size:.9rem;color:var(--muted);margin-bottom:1.25rem}
+.findings{list-style:none;padding:0;margin:1.5rem 0 0;border-top:1px solid var(--rule)}
+.findings li{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--rule)}
+.findings .virus{font-family:var(--sans);font-weight:600}
+.findings .virus small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
+@media (max-width:480px){.findings li{grid-template-columns:1fr;gap:.15rem}}
+.quotes{display:grid;gap:1.25rem;align-content:start}
+blockquote{margin:0;padding:1.25rem 1.4rem;background:var(--tag);border-radius:14px}
+blockquote p{font-size:1.25rem;line-height:1.4;margin:0 0 .6rem;font-style:italic}
+blockquote footer{font-family:var(--sans);font-size:.85rem;color:var(--muted)}
+.reach{font-family:var(--sans);display:flex;gap:2rem;flex-wrap:wrap;padding:.25rem 0}
+.reach div{min-width:7rem}
+.reach b{display:block;font-size:2.2rem;line-height:1;font-weight:600;letter-spacing:-.02em}
+.reach span{font-size:.85rem;color:var(--muted)}
+
+/* quote band */
+.voice{background:var(--tag);border-top:0}
+.lead-q{margin:0;display:grid;grid-template-columns:6px 1fr;gap:clamp(1.25rem,3vw,2.25rem)}
+.lead-q::before{content:"";border-radius:3px;background:linear-gradient(#440154,#365c8d,#1fa187,#a0da39,#fde725)}
+.voice blockquote{background:none;padding:0;border-radius:0}
+.lead-q blockquote p{font-family:var(--serif);font-style:italic;font-size:clamp(1.8rem,4.2vw,3.1rem);line-height:1.15;letter-spacing:-.01em;margin:0 0 1rem;max-width:30ch}
+.voice figcaption{font-family:var(--sans);font-size:.9rem;color:var(--muted)}
+.voice figcaption a{color:var(--ink)}
+.q-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.25rem,3vw,2.5rem);margin-top:clamp(2rem,4vw,3rem);padding-top:clamp(1.5rem,3vw,2rem);border-top:1px solid color-mix(in srgb,var(--ink) 15%,transparent)}
+.q-row figure{margin:0}
+.q-row blockquote p{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2vw,1.5rem);line-height:1.3;margin:0 0 .6rem;max-width:none}
+@media (max-width:700px){.q-row{grid-template-columns:1fr}}
+
+/* follow-up card */
+.followup{border:1px solid var(--rule);border-radius:14px;padding:1.4rem 1.4rem 1.5rem}
+.followup .when{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin-bottom:.35rem}
+.followup p{font-size:.98rem}
+.followup .stat{display:flex;gap:1.5rem;font-family:var(--sans);margin:1rem 0 1.25rem}
+.followup .stat b{display:block;font-size:1.6rem;line-height:1;font-weight:600}
+.followup .stat span{display:block;font-size:.8rem;line-height:1.3;color:var(--muted);margin-top:.3rem}
+.pubs .pq{margin:.7rem 0 .2rem;padding-left:.9rem;border-left:3px solid var(--accent);font-style:italic;font-size:1.02rem}
+.pubs .pq cite{display:block;font-style:normal;font-family:var(--sans);font-size:.8rem;color:var(--muted);margin-top:.15rem}
+
+/* outlets strip */
+.outlets{margin:2.75rem 0 0;padding:1.5rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.outlets p{font-family:var(--sans);font-size:.85rem;color:var(--muted);margin:0 0 .75rem}
+.outlets ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 1.75rem;align-items:baseline}
+.outlets a{font-family:var(--serif);font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--ink);text-decoration:none;font-weight:600}
+.outlets a:hover{color:var(--accent)}
+
+/* coverage list */
+.coverage{margin-top:2.5rem}
+.coverage-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:.75rem}
+.coverage-head h3{margin:0}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:999px;padding:3px}
+.seg button{font:500 .85rem var(--sans);background:none;border:0;color:var(--muted);padding:.35rem .85rem;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.press{list-style:none;margin:0;padding:0}
+.press li{display:grid;grid-template-columns:6.5rem 11rem 1fr;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.press time,.press .src{font-family:var(--sans);font-size:.85rem;color:var(--muted)}
+.press .src{color:var(--ink);font-weight:500}
+.press .src small{display:block;color:var(--muted);font-weight:400}
+.press a,.press .hl{font-size:1rem;line-height:1.4}
+@media (max-width:700px){.press li{grid-template-columns:1fr;gap:.1rem}}
+.more{margin-top:1rem}
+
+/* research */
+.threads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,4vw,3rem)}
+@media (max-width:760px){.threads{grid-template-columns:1fr}}
+.thread{padding-top:1.25rem;border-top:3px solid var(--ink)}
+.thread.now{border-top-color:var(--accent)}
+.thread .when{font-family:var(--sans);font-size:.85rem;color:var(--muted);margin-bottom:.5rem}
+.project{margin-top:1.25rem}
+.project h4{font-family:var(--sans);font-size:1rem;margin:0 0 .2rem;font-weight:600}
+.project .meta{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin:0 0 .35rem}
+.project p{font-size:.98rem;margin:0}
+.skills{margin-top:2.5rem}
+.skills p{font-size:.98rem;color:var(--muted)}
+
+/* publications */
+.pubs{list-style:none;margin:0;padding:0;counter-reset:none}
+.pubs li{display:grid;grid-template-columns:4rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--rule)}
+.pubs .yr{font-family:var(--sans);font-weight:600;color:var(--muted)}
+.pubs .t{font-family:var(--sans);font-weight:600;line-height:1.3;display:block;margin-bottom:.2rem}
+.pubs .au{font-size:.95rem;color:var(--muted)}
+.pubs .au b{color:var(--ink);font-weight:600}
+.pubs .j{font-size:.95rem}
+.pubs .links{font-family:var(--sans);font-size:.85rem;margin-top:.3rem;display:flex;gap:1rem;flex-wrap:wrap}
+.flag{font-family:var(--sans);font-size:.75rem;font-weight:600;background:var(--tag);color:var(--accent);padding:.12rem .5rem;border-radius:999px;margin-left:.4rem;vertical-align:.12em;white-space:nowrap}
+@media (max-width:520px){.pubs li{grid-template-columns:1fr;gap:.2rem}}
+.pub-tabs{margin-bottom:1.25rem}
+
+/* talks + teaching */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,4vw,3.5rem)}
+@media (max-width:800px){.two{grid-template-columns:1fr}}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:3.5rem 1fr;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--rule)}
+.rows .y{font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--muted)}
+.rows .what{font-family:var(--sans);font-weight:500;line-height:1.35}
+.rows .where{font-size:.93rem;color:var(--muted)}
+.award{color:var(--accent);font-family:var(--sans);font-size:.82rem;font-weight:600}
+details{margin-top:.5rem}
+summary{font-family:var(--sans);font-size:.9rem;color:var(--accent);cursor:pointer;padding:.6rem 0}
+.course{padding:.85rem 0;border-bottom:1px solid var(--rule)}
+.course .code{font-family:var(--sans);font-weight:600}
+.course .role{font-family:var(--sans);font-size:.85rem;color:var(--muted)}
+.course p{font-size:.95rem;margin:.2rem 0 0}
+.score{font-family:var(--sans);font-weight:600;color:var(--accent)}
+
+/* background + contact */
+.bg-list{list-style:none;margin:0;padding:0}
+.bg-list li{padding:.75rem 0;border-bottom:1px solid var(--rule)}
+.bg-list b{font-family:var(--sans);font-weight:600}
+.bg-list span{display:block;font-size:.93rem;color:var(--muted)}
+.contact{background:var(--ink);color:var(--paper);border-top:0}
+.contact h2{color:var(--paper)}
+.contact p{color:color-mix(in srgb,var(--paper) 80%,var(--ink))}
+.contact .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
+@media (max-width:760px){.contact .grid{grid-template-columns:1fr}}
+.contact a{color:var(--paper)}
+.email{font-family:var(--sans);font-size:clamp(1.3rem,3vw,1.9rem);font-weight:600;letter-spacing:-.01em;word-break:break-all}
+.links-list{list-style:none;margin:0;padding:0;font-family:var(--sans)}
+.links-list li{padding:.6rem 0;border-bottom:1px solid color-mix(in srgb,var(--paper) 20%,var(--ink))}
+.addr{font-size:.92rem;margin-top:1.5rem}
+footer.foot{font-family:var(--sans);font-size:.82rem;color:var(--muted);padding:1.5rem 0 2rem}
+.contact,.foot{background:var(--ink)}
+.foot{color:color-mix(in srgb,var(--paper) 60%,var(--ink))}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">Pranav S. Kulkarni</a>
+    <nav aria-label="Sections">
+      <a href="#in-the-news">In the news</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks &amp; teaching</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="who"><strong>Pranav S. Kulkarni</strong>, BVSc&nbsp;&amp;&nbsp;AH, MSc, PhD<br>Postdoctoral researcher, UC Davis Weill School of Veterinary Medicine</p>
+      <h1>I study how a warming climate moves disease from animals to people.</h1>
+      <p class="intro">I'm a veterinary epidemiologist. I build models that combine climate projections, wildlife habitat, and human populations to forecast where diseases like rodent-borne hemorrhagic fevers and avian influenza are likely to spread, so public health officials can prepare before outbreaks begin.</p>
+      <div class="actions">
+        <a class="btn primary" href="#in-the-news">Read about the arenavirus study</a>
+        <a class="btn" href="cv.pdf">Download CV</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=Ql2j3FEAAAAJ&amp;hl=en">Google Scholar</a>
+      </div>
+    </div>
+    <div>
+      <div class="figure">
+        <svg viewBox="0 0 640 560" aria-hidden="true" focusable="false"><path class="iso" style="--i:0" d="M670.4,285.0C672.2,291.5 673.6,298.1 674.3,304.8C675.0,311.4 675.2,318.1 674.7,324.8C674.3,331.4 673.3,338.1 671.7,344.7C670.1,351.2 667.9,357.7 665.3,364.0C662.6,370.3 659.4,376.4 655.8,382.4C652.2,388.4 648.0,394.1 643.7,399.7C639.3,405.3 634.5,410.7 629.5,415.8C624.6,421.0 619.3,425.9 613.9,430.7C608.5,435.5 602.9,440.1 597.3,444.5C591.6,449.0 585.9,453.2 580.1,457.4C574.3,461.5 568.4,465.5 562.6,469.5C556.7,473.4 550.8,477.2 544.8,481.0C538.9,484.7 532.9,488.4 526.8,491.9C520.8,495.5 514.7,499.0 508.5,502.4C502.3,505.7 496.0,509.0 489.7,512.1C483.3,515.3 476.8,518.3 470.2,521.1C463.6,523.9 456.9,526.6 450.0,529.0C443.2,531.5 436.2,533.7 429.2,535.7C422.1,537.6 414.9,539.4 407.6,540.8C400.4,542.3 393.0,543.4 385.7,544.3C378.3,545.2 370.8,545.9 363.4,546.2C356.0,546.6 348.5,546.7 341.1,546.5C333.7,546.4 326.3,546.0 318.9,545.4C311.6,544.9 304.2,544.1 297.0,543.2C289.7,542.3 282.5,541.2 275.3,540.0C268.1,538.8 260.9,537.5 253.8,536.1C246.6,534.8 239.5,533.3 232.4,531.8C225.3,530.2 218.2,528.6 211.0,526.9C203.9,525.2 196.7,523.5 189.5,521.6C182.3,519.7 175.1,517.8 167.9,515.6C160.7,513.5 153.4,511.2 146.3,508.8C139.1,506.3 131.9,503.6 124.9,500.7C117.8,497.7 110.8,494.6 104.1,491.1C97.3,487.6 90.7,483.9 84.4,479.8C78.1,475.8 72.0,471.4 66.3,466.8C60.6,462.1 55.3,457.1 50.4,451.8C45.6,446.6 41.1,441.0 37.2,435.3C33.3,429.5 29.9,423.5 27.0,417.3C24.1,411.2 21.8,404.8 19.9,398.4C18.0,392.0 16.7,385.4 15.9,378.9C15.0,372.4 14.6,365.8 14.6,359.3C14.5,352.8 15.0,346.3 15.6,339.9C16.2,333.5 17.2,327.2 18.3,321.0C19.4,314.8 20.8,308.7 22.1,302.7C23.4,296.7 24.9,290.8 26.3,285.0C27.8,279.2 29.2,273.5 30.6,267.8C31.9,262.1 33.3,256.5 34.5,250.9C35.7,245.3 36.9,239.7 38.0,234.0C39.1,228.4 40.1,222.7 41.2,217.0C42.3,211.2 43.3,205.5 44.4,199.6C45.6,193.8 46.7,187.9 48.1,181.9C49.5,176.0 51.0,169.9 52.8,163.9C54.6,157.9 56.6,151.8 58.9,145.9C61.3,139.9 63.9,133.9 66.9,128.0C70.0,122.1 73.3,116.3 77.1,110.7C80.9,105.1 85.1,99.6 89.6,94.3C94.2,89.1 99.1,84.0 104.4,79.2C109.7,74.4 115.3,69.8 121.3,65.5C127.2,61.3 133.5,57.2 139.9,53.5C146.4,49.8 153.1,46.3 160.0,43.1C166.9,39.9 174.0,37.0 181.2,34.3C188.4,31.7 195.7,29.2 203.1,27.0C210.5,24.8 218.0,22.8 225.6,21.0C233.1,19.2 240.8,17.6 248.4,16.2C256.1,14.8 263.8,13.5 271.5,12.4C279.2,11.4 287.0,10.5 294.8,9.8C302.6,9.1 310.4,8.6 318.2,8.3C326.1,8.0 333.9,7.9 341.8,8.1C349.6,8.3 357.5,8.7 365.3,9.5C373.0,10.2 380.8,11.2 388.5,12.5C396.1,13.9 403.8,15.5 411.2,17.5C418.6,19.5 426.0,21.8 433.0,24.5C440.1,27.1 447.1,30.1 453.7,33.4C460.4,36.7 466.8,40.3 473.0,44.2C479.1,48.0 485.0,52.2 490.6,56.5C496.2,60.8 501.5,65.4 506.5,70.1C511.5,74.7 516.3,79.5 520.8,84.4C525.4,89.2 529.6,94.2 533.8,99.1C537.9,104.0 541.8,109.0 545.7,113.9C549.6,118.8 553.3,123.6 557.1,128.5C560.9,133.3 564.6,138.0 568.4,142.7C572.2,147.4 576.0,152.1 579.9,156.7C583.9,161.4 587.9,165.9 592.0,170.6C596.1,175.2 600.3,179.9 604.5,184.6C608.8,189.3 613.1,194.1 617.5,199.1C621.8,204.0 626.2,209.0 630.4,214.2C634.7,219.5 638.9,224.8 642.9,230.4C646.8,235.9 650.7,241.7 654.2,247.6C657.6,253.5 660.8,259.6 663.6,265.8C666.3,272.1 668.7,278.5 670.4,285.0Z" stroke="#440154"/>
+<path class="iso" style="--i:1" d="M652.3,285.0C653.5,291.1 654.2,297.4 654.3,303.6C654.5,309.8 654.0,316.1 653.0,322.3C652.0,328.5 650.5,334.6 648.5,340.6C646.4,346.6 643.8,352.5 640.9,358.2C638.0,364.0 634.5,369.5 630.8,374.9C627.1,380.3 623.0,385.6 618.8,390.6C614.5,395.7 609.9,400.5 605.2,405.2C600.6,409.9 595.7,414.4 590.8,418.9C585.9,423.3 580.8,427.5 575.8,431.7C570.7,435.8 565.6,439.9 560.4,443.8C555.3,447.8 550.1,451.7 544.9,455.5C539.7,459.3 534.5,463.0 529.2,466.7C523.9,470.4 518.5,474.0 513.1,477.5C507.6,481.0 502.1,484.4 496.5,487.8C490.8,491.1 485.1,494.3 479.2,497.3C473.3,500.4 467.3,503.3 461.2,506.0C455.1,508.6 448.8,511.2 442.4,513.4C436.0,515.7 429.4,517.8 422.8,519.6C416.1,521.3 409.4,522.9 402.6,524.2C395.8,525.4 388.9,526.4 382.0,527.2C375.1,528.0 368.1,528.5 361.2,528.8C354.3,529.1 347.3,529.1 340.4,529.0C333.5,528.9 326.5,528.6 319.7,528.1C312.8,527.7 305.9,527.1 299.1,526.4C292.3,525.7 285.5,524.9 278.7,524.0C271.9,523.1 265.1,522.2 258.3,521.2C251.5,520.1 244.7,519.1 237.9,517.9C231.0,516.7 224.2,515.5 217.3,514.2C210.4,512.9 203.4,511.5 196.5,509.9C189.5,508.3 182.5,506.6 175.6,504.7C168.6,502.8 161.6,500.7 154.8,498.4C147.9,496.0 141.1,493.5 134.5,490.6C127.8,487.7 121.3,484.6 115.0,481.1C108.8,477.6 102.7,473.8 97.1,469.8C91.4,465.7 86.0,461.2 81.1,456.5C76.2,451.8 71.7,446.8 67.6,441.6C63.6,436.4 60.0,430.8 56.9,425.2C53.8,419.5 51.3,413.6 49.2,407.7C47.1,401.7 45.5,395.6 44.3,389.5C43.2,383.4 42.5,377.2 42.1,371.1C41.8,365.0 41.9,358.8 42.1,352.8C42.4,346.8 43.0,340.8 43.7,335.0C44.4,329.1 45.4,323.4 46.4,317.7C47.3,312.1 48.4,306.6 49.4,301.1C50.3,295.7 51.4,290.3 52.3,285.0C53.2,279.7 54.0,274.4 54.8,269.2C55.5,263.9 56.1,258.7 56.7,253.5C57.3,248.2 57.8,242.9 58.3,237.6C58.8,232.2 59.2,226.8 59.7,221.3C60.2,215.9 60.7,210.3 61.4,204.7C62.1,199.1 62.9,193.4 64.0,187.7C65.0,182.0 66.3,176.2 67.8,170.5C69.4,164.8 71.3,159.0 73.5,153.3C75.7,147.7 78.3,142.0 81.3,136.6C84.3,131.1 87.6,125.7 91.3,120.5C95.1,115.3 99.2,110.2 103.6,105.4C108.1,100.6 112.9,96.0 118.1,91.7C123.2,87.3 128.7,83.2 134.3,79.3C140.0,75.4 146.0,71.8 152.1,68.4C158.2,65.0 164.6,61.8 171.1,58.9C177.5,56.0 184.2,53.3 190.9,50.7C197.6,48.2 204.5,45.9 211.3,43.8C218.2,41.6 225.2,39.6 232.2,37.8C239.3,36.0 246.4,34.4 253.5,32.9C260.6,31.4 267.8,30.1 275.0,29.0C282.3,27.9 289.6,26.9 296.9,26.2C304.2,25.4 311.6,24.9 318.9,24.6C326.3,24.3 333.7,24.2 341.1,24.5C348.4,24.7 355.8,25.2 363.1,26.0C370.4,26.9 377.7,28.0 384.9,29.5C392.0,30.9 399.1,32.8 405.9,34.9C412.8,37.0 419.5,39.5 426.0,42.3C432.5,45.1 438.8,48.2 444.8,51.6C450.8,54.9 456.6,58.6 462.2,62.4C467.7,66.2 472.9,70.3 478.0,74.5C483.0,78.7 487.7,83.0 492.2,87.4C496.8,91.8 501.1,96.3 505.2,100.7C509.4,105.2 513.4,109.7 517.3,114.1C521.2,118.6 525.0,123.0 528.8,127.3C532.6,131.6 536.4,135.9 540.2,140.1C544.0,144.3 547.9,148.5 551.9,152.6C555.8,156.7 559.9,160.8 564.1,164.9C568.2,169.0 572.5,173.0 576.8,177.2C581.2,181.4 585.7,185.5 590.1,189.9C594.6,194.2 599.1,198.6 603.5,203.2C607.9,207.8 612.4,212.6 616.6,217.5C620.8,222.4 624.9,227.6 628.6,232.9C632.4,238.2 635.9,243.7 639.0,249.3C642.1,255.0 644.9,260.8 647.1,266.8C649.3,272.7 651.1,278.9 652.3,285.0Z" stroke="#440154"/>
+<path class="iso" style="--i:2" d="M632.4,285.0C632.9,290.8 633.0,296.6 632.5,302.4C632.0,308.1 631.0,313.9 629.5,319.6C628.0,325.2 626.0,330.8 623.7,336.3C621.3,341.7 618.5,347.1 615.4,352.2C612.3,357.4 608.8,362.4 605.2,367.3C601.6,372.2 597.7,376.9 593.6,381.4C589.6,386.0 585.4,390.4 581.2,394.7C576.9,399.0 572.6,403.2 568.2,407.3C563.8,411.4 559.4,415.3 555.0,419.3C550.5,423.2 546.1,427.0 541.6,430.8C537.1,434.6 532.6,438.4 528.0,442.1C523.4,445.8 518.8,449.4 514.1,453.0C509.4,456.5 504.6,460.0 499.7,463.4C494.8,466.8 489.8,470.2 484.7,473.4C479.5,476.5 474.2,479.6 468.8,482.5C463.4,485.4 457.8,488.1 452.1,490.6C446.4,493.1 440.5,495.4 434.5,497.5C428.5,499.5 422.4,501.4 416.2,503.0C410.0,504.5 403.7,505.9 397.4,507.0C391.1,508.1 384.6,509.0 378.2,509.7C371.8,510.4 365.4,510.8 358.9,511.1C352.5,511.4 346.1,511.5 339.6,511.5C333.2,511.5 326.8,511.4 320.4,511.1C314.0,510.9 307.6,510.5 301.2,510.1C294.8,509.7 288.4,509.3 282.0,508.7C275.5,508.2 269.1,507.6 262.6,507.0C256.1,506.3 249.6,505.6 243.1,504.8C236.5,504.0 229.9,503.1 223.2,502.1C216.6,501.0 209.9,499.9 203.2,498.5C196.6,497.1 189.8,495.6 183.2,493.8C176.6,492.1 170.0,490.1 163.5,487.8C157.1,485.4 150.7,482.9 144.6,480.0C138.5,477.0 132.5,473.8 126.9,470.3C121.3,466.8 115.9,462.9 111.0,458.7C106.1,454.6 101.5,450.1 97.4,445.4C93.2,440.6 89.5,435.6 86.3,430.4C83.1,425.3 80.3,419.8 78.0,414.3C75.7,408.8 73.9,403.1 72.5,397.5C71.1,391.8 70.2,386.0 69.5,380.3C68.9,374.5 68.7,368.8 68.6,363.1C68.6,357.5 68.9,351.9 69.3,346.4C69.7,340.9 70.3,335.5 70.9,330.2C71.5,325.0 72.2,319.8 72.8,314.7C73.5,309.6 74.1,304.6 74.6,299.7C75.2,294.7 75.6,289.9 76.0,285.0C76.3,280.1 76.5,275.3 76.7,270.4C76.8,265.6 76.8,260.7 76.9,255.8C76.9,250.8 76.8,245.9 76.8,240.8C76.8,235.7 76.7,230.6 76.9,225.4C77.0,220.2 77.2,214.9 77.6,209.5C78.1,204.2 78.6,198.8 79.5,193.4C80.5,188.0 81.6,182.6 83.1,177.2C84.7,171.8 86.5,166.4 88.7,161.2C90.9,155.9 93.5,150.7 96.5,145.6C99.5,140.6 102.8,135.7 106.5,130.9C110.2,126.2 114.2,121.6 118.6,117.3C122.9,112.9 127.6,108.8 132.5,104.9C137.4,100.9 142.7,97.2 148.0,93.7C153.4,90.2 159.0,86.9 164.8,83.8C170.5,80.6 176.4,77.7 182.4,75.0C188.4,72.2 194.5,69.7 200.7,67.3C206.9,64.9 213.2,62.6 219.6,60.5C225.9,58.4 232.4,56.4 238.9,54.6C245.4,52.8 251.9,51.1 258.5,49.6C265.2,48.1 271.9,46.7 278.6,45.6C285.3,44.4 292.2,43.4 299.0,42.7C305.8,42.0 312.7,41.5 319.6,41.2C326.5,41.0 333.5,41.0 340.4,41.4C347.2,41.8 354.1,42.4 360.9,43.4C367.7,44.4 374.4,45.7 381.0,47.3C387.6,49.0 394.1,50.9 400.4,53.2C406.6,55.5 412.7,58.1 418.6,61.0C424.5,63.8 430.2,67.0 435.6,70.3C441.0,73.7 446.2,77.3 451.1,81.0C456.1,84.7 460.8,88.6 465.3,92.5C469.8,96.4 474.1,100.4 478.3,104.4C482.5,108.4 486.4,112.5 490.3,116.4C494.3,120.4 498.0,124.3 501.9,128.2C505.7,132.1 509.4,135.9 513.3,139.6C517.1,143.4 521.0,147.0 524.9,150.6C528.9,154.3 533.0,157.8 537.1,161.4C541.3,165.0 545.6,168.5 550.0,172.1C554.3,175.7 558.8,179.3 563.3,183.1C567.8,186.9 572.4,190.7 576.9,194.7C581.4,198.7 586.0,202.8 590.3,207.2C594.6,211.5 598.9,216.0 602.8,220.7C606.7,225.5 610.5,230.4 613.8,235.4C617.2,240.5 620.2,245.8 622.8,251.2C625.3,256.6 627.5,262.2 629.1,267.8C630.7,273.5 631.8,279.2 632.4,285.0Z" stroke="#46327e"/>
+<path class="iso" style="--i:3" d="M610.6,285.0C610.5,290.3 609.9,295.7 608.9,301.0C607.9,306.3 606.4,311.6 604.6,316.7C602.7,321.8 600.4,326.9 597.9,331.8C595.4,336.7 592.4,341.5 589.4,346.1C586.3,350.7 583.0,355.2 579.6,359.6C576.2,364.0 572.5,368.2 568.9,372.4C565.3,376.5 561.5,380.5 557.8,384.5C554.1,388.5 550.3,392.3 546.5,396.1C542.7,399.9 538.9,403.7 535.1,407.4C531.3,411.1 527.5,414.8 523.6,418.4C519.7,422.0 515.8,425.6 511.8,429.2C507.8,432.7 503.7,436.2 499.5,439.6C495.3,443.1 491.0,446.4 486.6,449.6C482.2,452.9 477.6,456.0 472.9,459.0C468.1,462.0 463.3,464.8 458.2,467.5C453.2,470.1 448.0,472.6 442.7,474.9C437.4,477.1 432.0,479.2 426.4,481.0C420.9,482.9 415.2,484.5 409.5,485.9C403.7,487.3 397.9,488.5 392.1,489.5C386.2,490.5 380.3,491.3 374.4,492.0C368.5,492.7 362.6,493.1 356.7,493.5C350.8,493.9 344.8,494.1 338.9,494.3C333.0,494.5 327.0,494.6 321.1,494.6C315.1,494.6 309.2,494.6 303.2,494.5C297.2,494.4 291.2,494.3 285.1,494.1C279.0,493.9 272.9,493.7 266.7,493.4C260.6,493.1 254.3,492.7 248.1,492.1C241.8,491.6 235.4,491.0 229.1,490.1C222.8,489.3 216.4,488.3 210.0,487.1C203.7,485.8 197.3,484.3 191.1,482.6C184.9,480.8 178.7,478.8 172.8,476.4C166.9,474.1 161.1,471.4 155.6,468.4C150.1,465.4 144.8,462.1 139.9,458.4C135.0,454.8 130.4,450.8 126.3,446.6C122.1,442.4 118.3,437.9 115.0,433.2C111.7,428.5 108.8,423.5 106.3,418.5C103.9,413.4 101.9,408.2 100.2,402.9C98.6,397.7 97.4,392.3 96.6,387.0C95.7,381.6 95.2,376.3 94.9,371.0C94.6,365.7 94.6,360.5 94.7,355.4C94.8,350.2 95.1,345.2 95.4,340.3C95.7,335.3 96.1,330.5 96.4,325.8C96.8,321.0 97.1,316.4 97.3,311.9C97.5,307.3 97.7,302.8 97.7,298.3C97.7,293.9 97.6,289.5 97.4,285.0C97.2,280.5 96.8,276.1 96.5,271.6C96.1,267.1 95.6,262.5 95.2,257.9C94.8,253.3 94.3,248.6 93.9,243.8C93.6,239.0 93.3,234.1 93.2,229.2C93.1,224.3 93.2,219.3 93.5,214.3C93.9,209.3 94.4,204.2 95.3,199.2C96.3,194.2 97.4,189.1 99.0,184.1C100.6,179.2 102.5,174.2 104.8,169.4C107.0,164.6 109.7,159.9 112.7,155.3C115.6,150.7 119.0,146.3 122.6,142.0C126.2,137.8 130.2,133.7 134.3,129.8C138.5,125.9 143.0,122.2 147.6,118.6C152.3,115.1 157.1,111.7 162.1,108.5C167.1,105.3 172.3,102.3 177.6,99.4C182.9,96.5 188.3,93.8 193.8,91.2C199.3,88.6 204.9,86.1 210.5,83.8C216.2,81.4 221.9,79.2 227.8,77.1C233.6,75.0 239.5,73.1 245.4,71.2C251.4,69.4 257.5,67.7 263.6,66.3C269.7,64.8 275.9,63.4 282.2,62.3C288.5,61.2 294.8,60.3 301.2,59.7C307.5,59.0 314.0,58.6 320.4,58.6C326.8,58.5 333.2,58.7 339.6,59.2C346.0,59.7 352.3,60.5 358.6,61.7C364.8,62.9 371.0,64.4 377.0,66.1C383.0,67.9 388.9,70.1 394.5,72.4C400.2,74.8 405.7,77.5 411.0,80.3C416.2,83.2 421.3,86.3 426.2,89.5C431.0,92.7 435.6,96.1 440.1,99.6C444.6,103.0 448.8,106.6 452.9,110.1C457.1,113.6 461.0,117.2 464.9,120.7C468.8,124.2 472.6,127.7 476.4,131.1C480.2,134.5 483.9,137.9 487.7,141.1C491.5,144.4 495.3,147.6 499.3,150.7C503.2,153.9 507.2,156.9 511.3,160.0C515.4,163.1 519.7,166.1 524.0,169.2C528.3,172.3 532.8,175.4 537.3,178.6C541.7,181.8 546.3,185.1 550.8,188.6C555.3,192.0 559.9,195.6 564.2,199.3C568.6,203.1 573.0,207.0 577.0,211.2C581.0,215.3 584.9,219.6 588.4,224.1C591.9,228.6 595.2,233.4 597.9,238.2C600.7,243.1 603.1,248.1 605.0,253.3C606.9,258.4 608.4,263.7 609.3,269.0C610.2,274.2 610.6,279.7 610.6,285.0Z" stroke="#46327e"/>
+<path class="iso" style="--i:4" d="M587.2,285.0C586.6,289.9 585.5,294.8 584.1,299.6C582.7,304.4 580.8,309.1 578.8,313.7C576.7,318.3 574.3,322.8 571.8,327.2C569.2,331.6 566.4,335.8 563.5,340.0C560.6,344.1 557.5,348.2 554.5,352.1C551.4,356.1 548.2,359.9 545.1,363.6C541.9,367.4 538.7,371.1 535.5,374.7C532.3,378.4 529.1,382.0 525.9,385.5C522.7,389.1 519.5,392.6 516.2,396.1C513.0,399.6 509.7,403.1 506.4,406.6C503.0,410.0 499.6,413.4 496.1,416.7C492.6,420.1 489.0,423.4 485.2,426.6C481.4,429.8 477.6,432.9 473.5,435.9C469.5,438.9 465.3,441.8 461.0,444.5C456.6,447.2 452.1,449.8 447.5,452.2C442.9,454.5 438.1,456.7 433.2,458.7C428.3,460.8 423.2,462.6 418.1,464.2C413.0,465.8 407.8,467.3 402.6,468.5C397.4,469.8 392.0,470.9 386.7,471.9C381.4,472.8 376.0,473.6 370.6,474.3C365.3,475.0 359.9,475.6 354.5,476.2C349.1,476.7 343.6,477.1 338.2,477.6C332.7,478.0 327.3,478.3 321.8,478.6C316.3,479.0 310.7,479.3 305.1,479.5C299.5,479.7 293.9,479.9 288.1,480.1C282.4,480.2 276.6,480.2 270.8,480.2C264.9,480.1 259.0,479.9 253.0,479.6C247.1,479.2 241.1,478.7 235.1,478.0C229.1,477.2 223.1,476.3 217.2,475.0C211.3,473.8 205.4,472.3 199.7,470.4C194.0,468.6 188.3,466.5 183.0,464.0C177.7,461.5 172.5,458.7 167.7,455.6C162.9,452.5 158.3,449.1 154.2,445.4C150.1,441.7 146.3,437.6 142.9,433.4C139.5,429.2 136.5,424.7 133.9,420.2C131.3,415.6 129.2,410.8 127.3,405.9C125.5,401.1 124.2,396.1 123.0,391.2C121.9,386.3 121.2,381.3 120.6,376.4C120.1,371.6 119.9,366.7 119.7,361.9C119.5,357.2 119.6,352.5 119.6,347.9C119.6,343.3 119.8,338.9 119.8,334.5C119.9,330.1 120.0,325.9 119.9,321.7C119.9,317.5 119.8,313.4 119.5,309.3C119.3,305.2 118.9,301.2 118.4,297.2C117.9,293.1 117.3,289.1 116.6,285.0C116.0,280.9 115.2,276.8 114.4,272.6C113.7,268.4 112.9,264.2 112.2,259.9C111.5,255.5 110.8,251.1 110.3,246.6C109.8,242.2 109.4,237.6 109.3,233.0C109.2,228.4 109.3,223.8 109.7,219.1C110.1,214.5 110.7,209.8 111.7,205.2C112.8,200.6 114.1,195.9 115.8,191.4C117.4,186.9 119.4,182.4 121.8,178.1C124.1,173.8 126.8,169.6 129.7,165.5C132.7,161.4 136.0,157.4 139.4,153.7C142.9,149.9 146.7,146.2 150.6,142.7C154.6,139.2 158.8,135.9 163.1,132.7C167.3,129.5 171.8,126.4 176.4,123.5C181.0,120.6 185.7,117.8 190.5,115.1C195.2,112.4 200.1,109.8 205.1,107.3C210.1,104.8 215.1,102.4 220.2,100.1C225.4,97.9 230.6,95.7 235.9,93.7C241.2,91.6 246.6,89.7 252.0,87.9C257.5,86.2 263.1,84.5 268.7,83.1C274.4,81.7 280.1,80.5 285.9,79.5C291.7,78.5 297.5,77.8 303.4,77.3C309.3,76.8 315.2,76.6 321.1,76.7C327.0,76.8 333.0,77.2 338.8,77.9C344.6,78.7 350.4,79.7 356.1,81.0C361.8,82.3 367.3,84.0 372.7,85.9C378.1,87.8 383.4,90.0 388.5,92.3C393.6,94.7 398.5,97.3 403.2,100.0C407.9,102.8 412.4,105.7 416.7,108.7C421.1,111.6 425.2,114.7 429.3,117.8C433.3,120.8 437.2,124.0 441.0,127.0C444.9,130.1 448.6,133.1 452.3,136.0C456.1,139.0 459.7,141.9 463.5,144.7C467.2,147.5 470.9,150.2 474.8,152.9C478.7,155.6 482.6,158.2 486.6,160.8C490.7,163.4 494.8,165.9 499.1,168.5C503.3,171.1 507.7,173.6 512.0,176.4C516.4,179.1 520.9,181.8 525.4,184.7C529.8,187.6 534.3,190.6 538.7,193.9C543.0,197.1 547.4,200.4 551.4,204.0C555.5,207.6 559.4,211.4 563.0,215.3C566.6,219.3 569.9,223.5 572.8,227.8C575.8,232.1 578.4,236.7 580.5,241.3C582.6,245.9 584.3,250.7 585.5,255.5C586.7,260.3 587.4,265.3 587.7,270.2C588.0,275.1 587.8,280.1 587.2,285.0Z" stroke="#365c8d"/>
+<path class="iso" style="--i:5" d="M562.5,285.0C561.5,289.4 560.1,293.8 558.5,298.1C556.8,302.4 554.8,306.6 552.7,310.7C550.6,314.8 548.3,318.8 545.9,322.7C543.5,326.6 540.9,330.4 538.3,334.1C535.7,337.8 533.0,341.4 530.4,344.9C527.7,348.5 525.0,351.9 522.4,355.4C519.7,358.8 517.0,362.2 514.4,365.5C511.7,368.9 509.1,372.2 506.4,375.5C503.7,378.8 501.0,382.1 498.3,385.4C495.5,388.7 492.7,391.9 489.8,395.1C486.9,398.3 483.9,401.5 480.8,404.6C477.6,407.7 474.4,410.7 471.0,413.6C467.6,416.6 464.1,419.4 460.4,422.1C456.7,424.8 452.9,427.4 448.9,429.8C444.9,432.2 440.8,434.5 436.5,436.5C432.3,438.6 427.9,440.6 423.4,442.3C419.0,444.1 414.4,445.7 409.8,447.1C405.1,448.6 400.4,449.9 395.7,451.1C391.0,452.3 386.2,453.3 381.4,454.3C376.6,455.3 371.8,456.1 366.9,456.9C362.1,457.8 357.2,458.5 352.3,459.2C347.4,460.0 342.5,460.7 337.5,461.3C332.5,462.0 327.5,462.6 322.4,463.2C317.3,463.8 312.2,464.4 307.0,464.9C301.8,465.4 296.5,465.9 291.1,466.2C285.7,466.6 280.3,466.8 274.8,466.9C269.3,467.0 263.7,467.0 258.1,466.7C252.6,466.4 246.9,465.9 241.4,465.1C235.9,464.4 230.3,463.4 224.9,462.0C219.5,460.7 214.1,459.1 209.0,457.1C203.9,455.2 198.9,452.9 194.3,450.3C189.6,447.7 185.2,444.8 181.1,441.6C177.0,438.4 173.2,434.9 169.8,431.1C166.4,427.4 163.3,423.4 160.7,419.3C158.0,415.2 155.7,410.9 153.7,406.5C151.8,402.1 150.2,397.6 148.9,393.1C147.6,388.6 146.6,384.0 145.9,379.5C145.1,375.0 144.6,370.5 144.2,366.2C143.8,361.8 143.6,357.5 143.4,353.2C143.2,349.0 143.1,344.9 142.9,340.9C142.7,336.9 142.6,333.0 142.3,329.2C142.0,325.4 141.7,321.7 141.2,318.0C140.8,314.3 140.2,310.6 139.5,307.0C138.8,303.3 138.0,299.7 137.1,296.1C136.2,292.4 135.2,288.7 134.2,285.0C133.2,281.3 132.2,277.5 131.2,273.6C130.2,269.7 129.2,265.8 128.5,261.7C127.7,257.7 126.9,253.6 126.5,249.5C126.0,245.3 125.7,241.1 125.7,236.9C125.7,232.7 125.9,228.4 126.4,224.1C127.0,219.9 127.8,215.7 129.0,211.5C130.1,207.3 131.6,203.2 133.4,199.1C135.2,195.1 137.3,191.1 139.6,187.3C142.0,183.4 144.6,179.7 147.5,176.1C150.4,172.5 153.5,169.0 156.8,165.6C160.1,162.3 163.6,159.0 167.3,155.9C170.9,152.8 174.7,149.8 178.6,146.9C182.5,144.0 186.5,141.2 190.6,138.5C194.7,135.7 198.9,133.1 203.2,130.6C207.5,128.0 211.8,125.6 216.3,123.2C220.7,120.8 225.3,118.5 229.9,116.4C234.5,114.2 239.2,112.1 244.0,110.2C248.8,108.2 253.7,106.4 258.7,104.8C263.7,103.2 268.8,101.7 274.0,100.4C279.1,99.2 284.4,98.1 289.7,97.3C295.0,96.5 300.4,96.0 305.8,95.7C311.2,95.5 316.6,95.5 322.0,95.8C327.3,96.1 332.7,96.8 338.0,97.7C343.2,98.6 348.5,99.8 353.5,101.2C358.6,102.6 363.6,104.3 368.4,106.2C373.2,108.1 377.8,110.3 382.3,112.6C386.8,114.8 391.2,117.3 395.4,119.8C399.6,122.2 403.6,124.9 407.5,127.5C411.4,130.0 415.2,132.7 418.9,135.3C422.6,137.9 426.2,140.5 429.8,142.9C433.5,145.4 437.0,147.9 440.7,150.2C444.3,152.6 447.9,154.9 451.7,157.1C455.4,159.3 459.2,161.4 463.1,163.6C467.0,165.7 471.0,167.7 475.1,169.9C479.2,172.0 483.5,174.1 487.7,176.3C492.0,178.5 496.3,180.7 500.7,183.1C505.0,185.6 509.4,188.0 513.6,190.7C517.9,193.4 522.2,196.3 526.2,199.3C530.2,202.4 534.1,205.6 537.7,209.0C541.3,212.5 544.7,216.1 547.7,219.9C550.7,223.7 553.4,227.7 555.6,231.9C557.9,236.0 559.8,240.3 561.2,244.6C562.6,249.0 563.6,253.5 564.2,258.0C564.7,262.4 564.8,267.0 564.5,271.5C564.3,276.0 563.5,280.6 562.5,285.0Z" stroke="#365c8d"/>
+<path class="iso" style="--i:6" d="M537.2,285.0C536.0,289.0 534.4,292.9 532.7,296.6C531.0,300.4 529.1,304.1 527.1,307.8C525.1,311.4 522.9,314.9 520.8,318.3C518.6,321.8 516.4,325.1 514.2,328.4C512.0,331.7 509.8,334.9 507.6,338.1C505.4,341.3 503.2,344.4 501.0,347.5C498.8,350.7 496.7,353.7 494.5,356.8C492.3,359.9 490.1,363.0 487.9,366.0C485.6,369.1 483.4,372.1 481.0,375.1C478.6,378.1 476.2,381.1 473.6,384.0C471.1,386.9 468.4,389.8 465.6,392.6C462.8,395.4 459.9,398.1 456.8,400.7C453.7,403.3 450.5,405.8 447.1,408.2C443.8,410.5 440.3,412.8 436.6,414.9C433.0,417.0 429.2,418.9 425.4,420.7C421.6,422.6 417.6,424.2 413.6,425.8C409.6,427.3 405.5,428.7 401.4,430.1C397.2,431.4 393.1,432.6 388.8,433.8C384.6,434.9 380.4,436.0 376.1,437.0C371.9,438.1 367.6,439.0 363.3,440.0C359.0,441.0 354.6,441.9 350.2,442.9C345.8,443.8 341.4,444.7 336.8,445.6C332.3,446.5 327.7,447.4 323.1,448.2C318.4,449.0 313.6,449.8 308.8,450.5C304.0,451.2 299.1,451.8 294.1,452.3C289.1,452.7 284.0,453.1 278.9,453.2C273.9,453.3 268.7,453.3 263.6,452.9C258.5,452.6 253.3,452.1 248.3,451.2C243.2,450.3 238.2,449.2 233.4,447.7C228.6,446.2 223.8,444.5 219.4,442.4C214.9,440.3 210.6,437.9 206.7,435.2C202.7,432.5 199.0,429.5 195.6,426.3C192.3,423.1 189.2,419.6 186.5,415.9C183.7,412.3 181.4,408.5 179.3,404.5C177.2,400.6 175.5,396.6 174.0,392.5C172.6,388.4 171.4,384.3 170.4,380.2C169.5,376.2 168.8,372.1 168.1,368.1C167.5,364.1 167.1,360.2 166.7,356.3C166.3,352.5 166.0,348.8 165.6,345.1C165.2,341.5 164.9,338.0 164.4,334.5C163.9,331.1 163.4,327.7 162.8,324.4C162.1,321.1 161.4,317.8 160.5,314.6C159.7,311.3 158.7,308.1 157.6,304.9C156.6,301.6 155.4,298.4 154.3,295.1C153.1,291.8 151.9,288.4 150.7,285.0C149.6,281.6 148.4,278.1 147.3,274.5C146.3,270.9 145.4,267.3 144.6,263.6C143.9,259.9 143.3,256.1 143.0,252.3C142.6,248.6 142.5,244.7 142.7,240.9C142.9,237.1 143.3,233.2 144.0,229.4C144.8,225.6 145.8,221.8 147.1,218.1C148.4,214.4 150.0,210.7 151.9,207.2C153.7,203.6 155.8,200.2 158.1,196.8C160.5,193.4 163.0,190.1 165.7,187.0C168.4,183.8 171.4,180.7 174.4,177.7C177.4,174.8 180.6,171.9 183.9,169.1C187.2,166.3 190.5,163.6 194.0,160.9C197.5,158.3 201.0,155.7 204.6,153.2C208.3,150.7 212.0,148.2 215.8,145.9C219.5,143.5 223.4,141.2 227.3,139.0C231.3,136.7 235.3,134.6 239.5,132.5C243.6,130.5 247.9,128.6 252.2,126.8C256.5,125.0 261.0,123.4 265.5,122.0C270.0,120.5 274.7,119.3 279.4,118.2C284.1,117.2 288.9,116.4 293.7,115.9C298.5,115.3 303.4,115.0 308.3,115.0C313.1,115.0 318.0,115.3 322.8,115.8C327.6,116.3 332.4,117.1 337.1,118.1C341.8,119.1 346.4,120.4 350.9,121.9C355.3,123.4 359.7,125.1 363.9,126.9C368.2,128.7 372.3,130.7 376.2,132.7C380.2,134.7 384.0,136.9 387.7,139.0C391.5,141.2 395.1,143.4 398.6,145.5C402.2,147.6 405.6,149.8 409.1,151.8C412.6,153.9 416.0,155.8 419.4,157.8C422.9,159.7 426.4,161.5 429.9,163.3C433.5,165.1 437.1,166.8 440.9,168.4C444.6,170.1 448.4,171.7 452.3,173.4C456.2,175.1 460.3,176.7 464.3,178.4C468.4,180.2 472.6,181.9 476.7,183.9C480.9,185.8 485.1,187.8 489.2,190.0C493.3,192.2 497.5,194.5 501.4,197.0C505.3,199.6 509.1,202.3 512.7,205.2C516.2,208.1 519.6,211.3 522.6,214.6C525.6,217.9 528.3,221.4 530.7,225.0C533.0,228.6 535.0,232.5 536.6,236.3C538.2,240.2 539.4,244.3 540.2,248.3C540.9,252.4 541.3,256.5 541.3,260.6C541.3,264.7 540.9,268.9 540.2,272.9C539.6,277.0 538.5,281.0 537.2,285.0Z" stroke="#277f8e"/>
+<path class="iso" style="--i:7" d="M511.8,285.0C510.5,288.5 509.0,291.9 507.4,295.2C505.8,298.5 504.0,301.7 502.2,304.9C500.5,308.0 498.7,311.1 496.9,314.1C495.1,317.2 493.2,320.1 491.4,323.0C489.6,325.9 487.9,328.8 486.1,331.7C484.3,334.5 482.6,337.4 480.9,340.2C479.1,343.0 477.4,345.8 475.6,348.6C473.8,351.4 472.0,354.2 470.1,356.9C468.2,359.7 466.3,362.4 464.2,365.1C462.2,367.8 460.0,370.5 457.7,373.0C455.5,375.6 453.1,378.2 450.5,380.6C448.0,383.1 445.3,385.4 442.5,387.7C439.7,389.9 436.8,392.1 433.8,394.1C430.7,396.1 427.5,398.0 424.3,399.8C421.0,401.6 417.7,403.3 414.3,404.9C410.8,406.5 407.3,407.9 403.8,409.3C400.3,410.7 396.7,412.0 393.1,413.3C389.5,414.5 385.8,415.7 382.2,416.9C378.5,418.0 374.8,419.2 371.1,420.3C367.3,421.4 363.6,422.5 359.8,423.6C355.9,424.8 352.1,425.9 348.2,427.0C344.2,428.1 340.3,429.2 336.2,430.3C332.1,431.3 327.9,432.4 323.7,433.3C319.4,434.3 315.1,435.2 310.7,435.9C306.3,436.7 301.8,437.4 297.2,437.8C292.6,438.3 288.0,438.6 283.4,438.6C278.7,438.7 274.1,438.5 269.5,438.1C264.9,437.6 260.2,436.9 255.8,435.9C251.3,434.9 246.9,433.6 242.8,431.9C238.6,430.3 234.5,428.4 230.7,426.2C227.0,424.0 223.4,421.5 220.1,418.8C216.8,416.1 213.8,413.1 211.1,410.0C208.4,406.9 206.0,403.5 203.9,400.1C201.7,396.7 199.9,393.0 198.3,389.5C196.7,385.9 195.4,382.2 194.3,378.5C193.1,374.9 192.3,371.2 191.5,367.7C190.7,364.1 190.0,360.6 189.4,357.2C188.8,353.7 188.3,350.4 187.8,347.1C187.2,343.9 186.7,340.7 186.0,337.6C185.4,334.6 184.7,331.6 184.0,328.7C183.2,325.7 182.3,322.9 181.3,320.0C180.3,317.2 179.3,314.4 178.1,311.5C176.9,308.7 175.7,305.9 174.4,303.0C173.1,300.1 171.8,297.2 170.5,294.2C169.2,291.2 167.9,288.1 166.7,285.0C165.6,281.9 164.4,278.7 163.5,275.4C162.6,272.2 161.8,268.9 161.2,265.5C160.7,262.2 160.3,258.8 160.2,255.3C160.1,251.9 160.2,248.5 160.6,245.1C161.0,241.7 161.6,238.3 162.5,234.9C163.4,231.6 164.6,228.3 166.0,225.0C167.4,221.8 169.1,218.6 170.9,215.5C172.8,212.4 174.8,209.4 177.0,206.5C179.2,203.6 181.6,200.7 184.1,197.9C186.6,195.2 189.2,192.5 191.9,189.8C194.6,187.2 197.4,184.6 200.3,182.1C203.2,179.6 206.1,177.2 209.1,174.7C212.2,172.3 215.3,170.0 218.4,167.7C221.6,165.4 224.8,163.1 228.1,160.9C231.4,158.7 234.8,156.6 238.3,154.6C241.8,152.6 245.4,150.6 249.1,148.8C252.8,147.0 256.6,145.2 260.5,143.7C264.4,142.2 268.4,140.8 272.5,139.6C276.6,138.4 280.8,137.5 285.0,136.7C289.2,136.0 293.5,135.4 297.8,135.1C302.1,134.9 306.5,134.8 310.8,135.0C315.1,135.2 319.4,135.7 323.7,136.4C327.9,137.0 332.1,138.0 336.2,139.0C340.3,140.1 344.3,141.4 348.2,142.8C352.1,144.2 355.9,145.7 359.6,147.3C363.2,148.9 366.8,150.7 370.3,152.4C373.7,154.1 377.1,155.8 380.4,157.5C383.8,159.2 387.0,160.9 390.2,162.5C393.5,164.2 396.7,165.7 399.9,167.2C403.2,168.7 406.4,170.1 409.8,171.5C413.1,172.8 416.5,174.1 420.0,175.4C423.5,176.6 427.1,177.8 430.8,179.1C434.4,180.3 438.2,181.5 442.0,182.8C445.9,184.1 449.8,185.4 453.7,186.9C457.6,188.3 461.6,189.9 465.5,191.6C469.4,193.3 473.4,195.2 477.1,197.2C480.8,199.3 484.5,201.5 488.0,203.9C491.4,206.3 494.7,209.0 497.7,211.8C500.6,214.6 503.4,217.6 505.7,220.7C508.1,223.9 510.2,227.2 511.9,230.6C513.5,234.0 514.9,237.6 515.8,241.2C516.8,244.8 517.4,248.5 517.6,252.2C517.9,255.9 517.8,259.7 517.4,263.4C517.0,267.1 516.3,270.7 515.3,274.4C514.4,278.0 513.2,281.5 511.8,285.0Z" stroke="#1fa187"/>
+<path class="iso" style="--i:8" d="M486.9,285.0C485.7,288.0 484.3,290.9 482.9,293.8C481.5,296.6 480.0,299.4 478.6,302.2C477.1,304.9 475.7,307.5 474.2,310.2C472.8,312.8 471.4,315.4 470.0,318.0C468.6,320.6 467.2,323.1 465.9,325.6C464.5,328.2 463.1,330.7 461.7,333.2C460.3,335.7 458.9,338.2 457.5,340.7C456.0,343.1 454.5,345.6 452.8,348.0C451.2,350.5 449.5,352.9 447.7,355.2C445.9,357.6 444.0,359.9 441.9,362.1C439.9,364.4 437.7,366.5 435.4,368.6C433.1,370.7 430.7,372.7 428.2,374.6C425.7,376.5 423.1,378.3 420.4,380.0C417.7,381.7 414.9,383.3 412.0,384.9C409.1,386.4 406.2,387.8 403.2,389.2C400.3,390.6 397.3,391.9 394.2,393.2C391.2,394.5 388.1,395.7 385.0,396.9C381.9,398.1 378.8,399.3 375.7,400.5C372.5,401.7 369.4,402.9 366.2,404.1C362.9,405.3 359.7,406.6 356.4,407.8C353.0,409.0 349.6,410.2 346.2,411.4C342.7,412.6 339.2,413.9 335.5,415.0C331.9,416.1 328.2,417.2 324.3,418.2C320.5,419.2 316.6,420.1 312.6,420.8C308.7,421.5 304.6,422.1 300.5,422.4C296.4,422.8 292.3,423.0 288.2,422.9C284.1,422.8 279.9,422.4 275.9,421.8C271.9,421.2 267.9,420.3 264.0,419.1C260.2,417.9 256.5,416.5 253.0,414.8C249.4,413.0 246.1,411.0 243.0,408.8C239.9,406.6 237.0,404.1 234.3,401.5C231.7,398.9 229.3,396.0 227.2,393.1C225.1,390.2 223.2,387.0 221.6,383.9C219.9,380.8 218.5,377.6 217.2,374.4C216.0,371.3 215.0,368.1 214.0,364.9C213.1,361.8 212.3,358.7 211.5,355.7C210.8,352.7 210.1,349.8 209.4,346.9C208.7,344.1 208.0,341.3 207.3,338.6C206.5,335.9 205.7,333.3 204.8,330.8C203.9,328.2 203.0,325.8 201.9,323.3C200.8,320.8 199.7,318.4 198.5,316.0C197.2,313.5 195.9,311.1 194.6,308.6C193.3,306.2 191.8,303.7 190.5,301.1C189.2,298.5 187.8,295.9 186.5,293.2C185.3,290.6 184.0,287.8 183.0,285.0C182.0,282.2 181.0,279.3 180.3,276.4C179.5,273.5 179.0,270.5 178.6,267.5C178.3,264.5 178.2,261.5 178.3,258.5C178.4,255.5 178.8,252.5 179.4,249.5C180.0,246.6 180.8,243.6 181.8,240.7C182.9,237.8 184.1,235.0 185.6,232.2C187.0,229.4 188.6,226.7 190.4,224.0C192.1,221.4 194.0,218.8 196.0,216.2C198.0,213.7 200.2,211.2 202.4,208.8C204.6,206.4 206.8,204.0 209.2,201.7C211.5,199.4 213.9,197.1 216.4,194.9C218.9,192.7 221.4,190.4 224.0,188.3C226.6,186.1 229.2,184.0 231.9,181.9C234.7,179.8 237.5,177.8 240.4,175.8C243.3,173.9 246.2,172.0 249.3,170.2C252.4,168.4 255.6,166.7 258.9,165.2C262.1,163.6 265.5,162.2 269.0,161.0C272.5,159.7 276.0,158.6 279.7,157.8C283.3,156.9 287.0,156.2 290.8,155.7C294.5,155.3 298.3,155.0 302.1,155.0C305.9,154.9 309.7,155.1 313.4,155.5C317.2,155.9 320.9,156.5 324.6,157.2C328.2,157.9 331.8,158.9 335.3,159.9C338.8,160.9 342.2,162.1 345.6,163.3C348.9,164.5 352.1,165.9 355.3,167.2C358.5,168.5 361.5,169.8 364.6,171.1C367.6,172.4 370.5,173.7 373.5,175.0C376.5,176.2 379.4,177.4 382.4,178.5C385.4,179.6 388.3,180.6 391.4,181.6C394.5,182.5 397.6,183.4 400.8,184.3C404.0,185.2 407.2,186.0 410.6,186.8C414.0,187.7 417.4,188.5 421.0,189.4C424.5,190.3 428.1,191.2 431.7,192.2C435.4,193.2 439.1,194.3 442.7,195.6C446.3,196.9 450.0,198.3 453.5,199.9C457.0,201.5 460.5,203.2 463.7,205.2C467.0,207.1 470.2,209.3 473.0,211.6C475.9,213.9 478.6,216.4 480.9,219.1C483.2,221.8 485.3,224.6 487.1,227.6C488.8,230.5 490.2,233.6 491.3,236.8C492.4,239.9 493.2,243.2 493.6,246.5C494.1,249.7 494.2,253.1 494.1,256.4C493.9,259.6 493.5,263.0 492.9,266.2C492.3,269.4 491.4,272.7 490.4,275.8C489.4,278.9 488.2,282.0 486.9,285.0Z" stroke="#1fa187"/>
+<path class="iso" style="--i:9" d="M462.8,285.0C461.7,287.5 460.6,290.0 459.5,292.4C458.4,294.9 457.3,297.2 456.2,299.6C455.1,301.9 454.0,304.2 452.9,306.5C451.8,308.7 450.8,311.0 449.7,313.2C448.7,315.4 447.7,317.7 446.6,319.9C445.5,322.1 444.5,324.3 443.3,326.4C442.2,328.6 441.1,330.8 439.8,333.0C438.5,335.1 437.2,337.2 435.8,339.3C434.4,341.4 432.9,343.5 431.3,345.4C429.7,347.4 427.9,349.4 426.1,351.2C424.3,353.1 422.3,354.9 420.3,356.6C418.3,358.3 416.1,360.0 413.9,361.6C411.7,363.1 409.4,364.6 407.1,366.0C404.7,367.5 402.3,368.8 399.9,370.1C397.5,371.4 395.0,372.7 392.5,373.9C390.0,375.1 387.5,376.3 384.9,377.5C382.4,378.7 379.8,379.9 377.3,381.1C374.7,382.3 372.1,383.5 369.4,384.7C366.8,385.9 364.1,387.2 361.4,388.4C358.7,389.7 355.9,391.0 353.0,392.2C350.1,393.5 347.2,394.8 344.2,396.0C341.2,397.2 338.1,398.4 334.9,399.5C331.7,400.6 328.4,401.6 325.0,402.5C321.6,403.4 318.2,404.1 314.7,404.7C311.2,405.3 307.6,405.7 304.1,405.9C300.5,406.1 296.9,406.0 293.4,405.7C289.8,405.5 286.3,404.9 282.9,404.1C279.5,403.4 276.1,402.3 272.9,401.0C269.8,399.7 266.7,398.2 263.8,396.4C261.0,394.7 258.3,392.7 255.8,390.5C253.3,388.4 251.1,386.1 249.0,383.6C247.0,381.2 245.1,378.6 243.5,376.0C241.8,373.4 240.4,370.6 239.1,368.0C237.8,365.3 236.7,362.5 235.6,359.9C234.6,357.2 233.7,354.5 232.8,352.0C232.0,349.4 231.2,346.9 230.4,344.5C229.6,342.0 228.8,339.7 227.9,337.4C227.1,335.1 226.2,332.9 225.3,330.7C224.3,328.6 223.3,326.5 222.2,324.4C221.1,322.4 219.9,320.3 218.7,318.3C217.4,316.2 216.1,314.2 214.8,312.1C213.4,310.1 212.0,308.0 210.6,305.8C209.3,303.7 207.9,301.5 206.6,299.2C205.3,297.0 204.0,294.7 202.9,292.3C201.8,289.9 200.8,287.5 200.0,285.0C199.1,282.5 198.4,280.0 198.0,277.4C197.5,274.9 197.2,272.2 197.1,269.7C197.0,267.1 197.1,264.4 197.5,261.9C197.8,259.3 198.3,256.7 199.0,254.2C199.8,251.6 200.7,249.1 201.8,246.7C202.8,244.2 204.1,241.8 205.4,239.4C206.8,237.1 208.3,234.8 209.9,232.5C211.4,230.3 213.1,228.1 214.9,225.9C216.6,223.7 218.5,221.6 220.3,219.5C222.2,217.5 224.1,215.4 226.1,213.4C228.1,211.4 230.1,209.4 232.2,207.4C234.2,205.4 236.4,203.5 238.6,201.6C240.7,199.7 243.0,197.8 245.3,196.0C247.7,194.2 250.1,192.4 252.6,190.7C255.1,189.1 257.7,187.4 260.4,186.0C263.1,184.5 265.9,183.1 268.8,181.9C271.6,180.6 274.6,179.5 277.7,178.6C280.7,177.7 283.9,176.9 287.0,176.3C290.2,175.8 293.4,175.4 296.7,175.2C299.9,175.0 303.2,175.0 306.4,175.1C309.6,175.2 312.9,175.6 316.1,176.0C319.2,176.5 322.4,177.2 325.4,177.9C328.5,178.6 331.5,179.4 334.5,180.3C337.4,181.2 340.2,182.2 343.0,183.1C345.8,184.1 348.5,185.1 351.2,186.1C353.9,187.0 356.6,188.0 359.2,188.8C361.8,189.7 364.4,190.5 367.1,191.3C369.7,192.0 372.4,192.7 375.1,193.4C377.8,194.0 380.5,194.6 383.4,195.1C386.2,195.6 389.1,196.1 392.1,196.6C395.1,197.1 398.2,197.5 401.4,198.1C404.5,198.6 407.8,199.1 411.1,199.8C414.3,200.4 417.7,201.2 420.9,202.0C424.2,202.9 427.6,203.9 430.8,205.1C434.0,206.2 437.2,207.5 440.2,209.0C443.2,210.5 446.2,212.2 448.9,214.1C451.5,215.9 454.1,218.0 456.3,220.2C458.6,222.3 460.6,224.7 462.4,227.2C464.1,229.7 465.6,232.3 466.8,235.0C467.9,237.7 468.8,240.5 469.4,243.3C470.0,246.1 470.3,249.0 470.4,251.9C470.5,254.8 470.3,257.7 470.0,260.6C469.6,263.4 469.0,266.3 468.3,269.0C467.7,271.8 466.8,274.5 465.8,277.2C464.9,279.9 463.9,282.5 462.8,285.0Z" stroke="#4ac16d"/>
+<path class="iso" style="--i:10" d="M439.7,285.0C438.9,287.1 438.1,289.1 437.3,291.2C436.5,293.2 435.7,295.2 434.9,297.1C434.1,299.1 433.4,301.0 432.6,302.9C431.8,304.8 431.1,306.7 430.3,308.6C429.5,310.5 428.8,312.4 427.9,314.3C427.1,316.2 426.3,318.0 425.3,319.9C424.4,321.7 423.4,323.5 422.3,325.3C421.3,327.1 420.1,328.9 418.9,330.6C417.6,332.3 416.3,334.0 414.9,335.6C413.4,337.3 411.9,338.8 410.3,340.3C408.7,341.9 407.0,343.3 405.2,344.7C403.5,346.1 401.7,347.4 399.8,348.7C397.9,349.9 396.0,351.1 394.0,352.3C392.1,353.5 390.1,354.6 388.1,355.8C386.1,356.9 384.1,358.0 382.1,359.1C380.1,360.2 378.0,361.3 376.0,362.4C373.9,363.5 371.9,364.7 369.8,365.8C367.7,367.0 365.5,368.2 363.4,369.4C361.2,370.6 359.0,371.8 356.7,373.0C354.4,374.2 352.1,375.5 349.7,376.7C347.3,377.9 344.8,379.1 342.2,380.2C339.6,381.3 336.9,382.4 334.2,383.4C331.4,384.3 328.6,385.2 325.7,385.9C322.8,386.6 319.9,387.2 316.9,387.5C313.9,387.9 310.9,388.1 307.9,388.1C304.9,388.0 301.9,387.8 298.9,387.3C296.0,386.9 293.1,386.2 290.3,385.3C287.6,384.4 284.9,383.2 282.3,381.9C279.8,380.6 277.4,379.0 275.2,377.4C272.9,375.7 270.8,373.8 268.9,371.9C267.0,369.9 265.3,367.8 263.7,365.7C262.1,363.6 260.7,361.4 259.5,359.2C258.2,357.0 257.1,354.7 256.0,352.5C254.9,350.3 254.0,348.1 253.1,346.0C252.2,343.9 251.3,341.8 250.5,339.8C249.6,337.8 248.8,335.9 247.9,334.0C247.0,332.1 246.1,330.3 245.2,328.5C244.2,326.8 243.2,325.1 242.1,323.4C241.0,321.7 239.8,320.1 238.6,318.4C237.4,316.8 236.1,315.1 234.8,313.5C233.5,311.8 232.2,310.1 230.8,308.4C229.5,306.6 228.2,304.8 226.9,303.0C225.7,301.2 224.4,299.3 223.3,297.3C222.2,295.4 221.1,293.4 220.3,291.3C219.4,289.3 218.6,287.1 218.0,285.0C217.4,282.9 217.0,280.7 216.8,278.5C216.5,276.3 216.5,274.1 216.6,271.9C216.7,269.7 217.0,267.5 217.5,265.4C217.9,263.2 218.6,261.0 219.3,258.9C220.1,256.8 221.0,254.8 222.0,252.7C223.0,250.7 224.2,248.7 225.4,246.7C226.6,244.8 227.9,242.9 229.3,241.0C230.6,239.1 232.0,237.3 233.5,235.5C234.9,233.6 236.4,231.8 238.0,230.1C239.5,228.3 241.1,226.5 242.7,224.8C244.3,223.1 245.9,221.4 247.7,219.7C249.4,218.0 251.1,216.3 253.0,214.7C254.8,213.1 256.7,211.5 258.7,210.0C260.7,208.5 262.7,207.1 264.9,205.7C267.0,204.4 269.3,203.1 271.6,201.9C273.9,200.8 276.4,199.7 278.8,198.8C281.3,197.9 283.9,197.1 286.5,196.5C289.1,195.9 291.8,195.5 294.5,195.2C297.1,194.8 299.9,194.7 302.6,194.7C305.3,194.7 308.0,194.8 310.7,195.1C313.4,195.3 316.0,195.7 318.6,196.2C321.2,196.7 323.8,197.3 326.3,197.9C328.8,198.5 331.2,199.2 333.6,199.8C336.0,200.5 338.3,201.2 340.6,201.9C342.9,202.5 345.2,203.2 347.4,203.8C349.7,204.3 351.9,204.9 354.2,205.4C356.4,205.8 358.7,206.2 361.0,206.6C363.3,206.9 365.7,207.2 368.1,207.5C370.6,207.7 373.1,207.9 375.7,208.1C378.2,208.3 380.9,208.5 383.6,208.7C386.3,209.0 389.1,209.2 392.0,209.5C394.8,209.9 397.7,210.2 400.6,210.8C403.5,211.3 406.4,211.9 409.3,212.7C412.1,213.5 415.0,214.4 417.7,215.5C420.4,216.6 423.0,217.8 425.4,219.2C427.9,220.6 430.2,222.2 432.3,223.9C434.4,225.7 436.3,227.6 438.0,229.6C439.7,231.6 441.1,233.7 442.3,236.0C443.5,238.2 444.4,240.5 445.2,242.9C445.9,245.3 446.3,247.7 446.6,250.1C446.9,252.6 446.9,255.1 446.8,257.5C446.7,259.9 446.3,262.4 445.9,264.8C445.5,267.2 444.9,269.5 444.2,271.8C443.6,274.1 442.9,276.4 442.1,278.6C441.4,280.8 440.5,282.9 439.7,285.0Z" stroke="#4ac16d"/>
+<path class="iso" style="--i:11" d="M417.7,285.0C417.2,286.7 416.6,288.3 416.1,289.9C415.6,291.6 415.1,293.2 414.6,294.8C414.0,296.4 413.5,297.9 413.0,299.5C412.5,301.1 412.0,302.6 411.4,304.2C410.8,305.7 410.2,307.3 409.6,308.8C408.9,310.3 408.2,311.8 407.4,313.3C406.7,314.8 405.8,316.3 404.9,317.7C404.0,319.1 403.0,320.6 401.9,321.9C400.8,323.3 399.7,324.6 398.4,325.9C397.2,327.1 395.9,328.3 394.6,329.5C393.2,330.7 391.8,331.8 390.4,332.9C388.9,334.0 387.4,335.0 385.9,336.0C384.4,337.0 382.9,338.0 381.4,339.0C379.8,340.0 378.3,340.9 376.7,341.9C375.2,342.9 373.6,343.8 372.0,344.8C370.5,345.8 368.9,346.8 367.3,347.8C365.7,348.8 364.1,349.9 362.4,351.0C360.8,352.0 359.1,353.2 357.4,354.3C355.7,355.4 353.9,356.5 352.0,357.6C350.2,358.7 348.3,359.8 346.3,360.9C344.3,361.9 342.2,363.0 340.1,363.9C338.0,364.8 335.7,365.7 333.5,366.4C331.2,367.1 328.8,367.8 326.5,368.2C324.1,368.7 321.6,369.0 319.2,369.2C316.8,369.3 314.3,369.3 312.0,369.1C309.6,368.9 307.2,368.4 304.8,367.9C302.5,367.3 300.3,366.5 298.1,365.5C296.0,364.6 293.9,363.5 292.0,362.2C290.1,361.0 288.3,359.6 286.6,358.1C284.9,356.6 283.4,355.0 282.0,353.3C280.5,351.7 279.3,350.0 278.1,348.2C276.9,346.5 275.8,344.7 274.8,343.0C273.8,341.3 272.9,339.6 272.0,337.9C271.1,336.2 270.3,334.6 269.5,333.0C268.6,331.4 267.8,329.9 267.0,328.4C266.1,327.0 265.3,325.6 264.3,324.2C263.4,322.8 262.4,321.5 261.4,320.2C260.4,318.9 259.3,317.6 258.2,316.4C257.1,315.1 255.9,313.8 254.7,312.6C253.5,311.3 252.2,310.0 251.0,308.6C249.8,307.3 248.5,305.9 247.4,304.5C246.2,303.0 245.0,301.6 244.0,300.0C242.9,298.5 241.9,296.9 241.0,295.3C240.2,293.6 239.4,292.0 238.8,290.2C238.1,288.5 237.6,286.8 237.3,285.0C237.0,283.2 236.8,281.4 236.7,279.6C236.7,277.9 236.8,276.0 237.1,274.3C237.3,272.5 237.7,270.7 238.2,269.0C238.7,267.2 239.4,265.5 240.1,263.8C240.8,262.1 241.6,260.5 242.5,258.8C243.3,257.2 244.3,255.6 245.3,254.0C246.3,252.4 247.4,250.9 248.4,249.4C249.5,247.8 250.6,246.3 251.8,244.8C252.9,243.4 254.1,241.9 255.3,240.4C256.5,239.0 257.8,237.5 259.0,236.1C260.3,234.7 261.7,233.3 263.0,231.9C264.4,230.5 265.9,229.2 267.4,227.9C268.9,226.6 270.5,225.3 272.1,224.2C273.8,223.0 275.5,221.9 277.3,220.8C279.1,219.8 281.0,218.9 283.0,218.1C284.9,217.3 286.9,216.5 289.0,215.9C291.1,215.4 293.2,214.9 295.3,214.5C297.5,214.2 299.7,214.0 301.9,213.9C304.0,213.8 306.3,213.8 308.4,213.9C310.6,214.0 312.8,214.2 314.9,214.5C317.0,214.8 319.1,215.2 321.1,215.6C323.2,216.0 325.1,216.4 327.1,216.9C329.1,217.3 331.0,217.8 332.8,218.2C334.7,218.6 336.6,219.0 338.4,219.4C340.2,219.7 342.0,220.0 343.9,220.3C345.7,220.5 347.6,220.7 349.5,220.9C351.4,221.0 353.3,221.1 355.3,221.1C357.3,221.2 359.3,221.2 361.4,221.2C363.5,221.1 365.7,221.1 367.9,221.1C370.2,221.1 372.5,221.1 374.8,221.2C377.2,221.3 379.6,221.4 382.0,221.6C384.4,221.9 386.9,222.2 389.3,222.7C391.7,223.1 394.1,223.7 396.4,224.4C398.7,225.1 401.0,226.0 403.1,227.0C405.2,228.0 407.3,229.2 409.1,230.4C411.0,231.7 412.7,233.2 414.2,234.7C415.8,236.3 417.1,238.0 418.2,239.7C419.4,241.5 420.3,243.3 421.1,245.2C421.8,247.1 422.4,249.1 422.8,251.1C423.2,253.0 423.3,255.1 423.4,257.1C423.5,259.1 423.3,261.1 423.2,263.1C423.0,265.0 422.6,267.0 422.2,268.9C421.9,270.8 421.4,272.7 420.9,274.5C420.4,276.3 419.9,278.1 419.3,279.9C418.8,281.6 418.2,283.3 417.7,285.0Z" stroke="#a0da39"/>
+<path class="iso" style="--i:12" d="M396.6,285.0C396.3,286.3 396.0,287.5 395.7,288.8C395.3,290.0 395.1,291.2 394.7,292.5C394.4,293.7 394.1,294.9 393.7,296.1C393.4,297.3 393.0,298.6 392.6,299.7C392.2,300.9 391.7,302.1 391.2,303.3C390.7,304.5 390.1,305.6 389.5,306.7C388.8,307.9 388.1,309.0 387.4,310.1C386.6,311.1 385.8,312.2 384.9,313.2C384.0,314.2 383.1,315.2 382.1,316.1C381.1,317.0 380.1,317.9 379.0,318.8C378.0,319.7 376.9,320.5 375.8,321.3C374.7,322.1 373.6,322.9 372.5,323.7C371.3,324.5 370.2,325.3 369.1,326.1C367.9,326.9 366.8,327.6 365.7,328.5C364.5,329.3 363.4,330.1 362.3,330.9C361.1,331.8 360.0,332.6 358.8,333.5C357.6,334.4 356.4,335.3 355.2,336.2C354.0,337.2 352.7,338.1 351.4,339.1C350.1,340.0 348.7,340.9 347.3,341.8C345.8,342.7 344.3,343.6 342.8,344.4C341.2,345.3 339.6,346.0 337.9,346.7C336.2,347.4 334.5,348.0 332.7,348.5C330.9,348.9 329.1,349.3 327.3,349.6C325.4,349.8 323.5,349.9 321.7,349.8C319.9,349.8 318.0,349.6 316.2,349.2C314.4,348.9 312.6,348.4 310.9,347.8C309.3,347.2 307.6,346.4 306.1,345.5C304.5,344.7 303.0,343.7 301.7,342.6C300.3,341.5 299.0,340.4 297.8,339.2C296.6,338.0 295.6,336.7 294.5,335.4C293.5,334.2 292.6,332.9 291.7,331.6C290.9,330.3 290.1,329.1 289.3,327.8C288.5,326.6 287.8,325.4 287.0,324.2C286.3,323.1 285.5,322.0 284.8,320.9C284.0,319.8 283.2,318.8 282.4,317.8C281.6,316.8 280.8,315.9 279.9,314.9C279.0,314.0 278.0,313.1 277.1,312.2C276.1,311.3 275.1,310.4 274.1,309.4C273.0,308.5 271.9,307.6 270.9,306.6C269.8,305.6 268.8,304.7 267.7,303.6C266.7,302.6 265.7,301.5 264.8,300.4C263.8,299.2 262.9,298.1 262.1,296.8C261.4,295.6 260.6,294.4 260.0,293.1C259.4,291.8 258.9,290.5 258.5,289.1C258.2,287.8 257.9,286.4 257.8,285.0C257.6,283.6 257.6,282.2 257.7,280.8C257.8,279.5 258.0,278.1 258.3,276.7C258.5,275.4 258.9,274.0 259.4,272.7C259.9,271.3 260.4,270.0 261.0,268.7C261.6,267.5 262.2,266.2 262.9,264.9C263.6,263.7 264.3,262.5 265.1,261.3C265.8,260.0 266.6,258.8 267.4,257.7C268.2,256.5 269.0,255.3 269.9,254.1C270.7,253.0 271.6,251.8 272.5,250.7C273.4,249.6 274.4,248.4 275.4,247.3C276.4,246.2 277.4,245.2 278.5,244.1C279.6,243.1 280.7,242.1 281.9,241.1C283.1,240.2 284.4,239.3 285.7,238.4C287.0,237.6 288.4,236.8 289.9,236.1C291.3,235.4 292.8,234.8 294.4,234.3C295.9,233.8 297.5,233.4 299.1,233.0C300.8,232.7 302.4,232.5 304.1,232.3C305.8,232.2 307.4,232.1 309.1,232.2C310.8,232.2 312.4,232.3 314.0,232.4C315.7,232.6 317.3,232.8 318.8,233.0C320.4,233.3 321.9,233.5 323.5,233.8C325.0,234.1 326.4,234.4 327.9,234.6C329.3,234.9 330.7,235.1 332.1,235.3C333.5,235.5 334.9,235.6 336.3,235.7C337.7,235.8 339.1,235.8 340.6,235.8C342.0,235.8 343.5,235.8 345.0,235.7C346.5,235.6 348.0,235.5 349.6,235.3C351.3,235.2 352.9,235.0 354.6,234.9C356.4,234.7 358.2,234.6 360.0,234.5C361.8,234.4 363.7,234.4 365.6,234.4C367.4,234.5 369.4,234.5 371.3,234.7C373.2,235.0 375.1,235.2 376.9,235.7C378.8,236.1 380.6,236.6 382.3,237.3C384.0,237.9 385.7,238.7 387.2,239.6C388.8,240.5 390.2,241.5 391.5,242.6C392.8,243.7 394.0,244.9 395.0,246.2C396.0,247.5 396.8,248.9 397.6,250.3C398.3,251.7 398.8,253.2 399.3,254.7C399.7,256.3 400.0,257.8 400.2,259.3C400.3,260.9 400.4,262.4 400.4,264.0C400.3,265.5 400.2,267.0 400.0,268.5C399.9,270.0 399.6,271.5 399.3,272.9C399.1,274.3 398.8,275.7 398.5,277.1C398.2,278.5 397.8,279.8 397.5,281.1C397.2,282.4 396.9,283.7 396.6,285.0Z" stroke="#a0da39"/>
+<path class="iso" style="--i:13" d="M376.0,285.0C375.9,285.9 375.7,286.8 375.6,287.6C375.4,288.5 375.3,289.3 375.1,290.2C374.9,291.1 374.7,291.9 374.5,292.8C374.3,293.6 374.0,294.5 373.7,295.3C373.4,296.1 373.1,296.9 372.7,297.8C372.3,298.6 371.8,299.4 371.4,300.1C370.9,300.9 370.3,301.6 369.8,302.4C369.2,303.1 368.6,303.8 367.9,304.5C367.3,305.2 366.6,305.8 365.9,306.4C365.2,307.1 364.5,307.7 363.8,308.3C363.0,308.9 362.3,309.4 361.6,310.0C360.8,310.6 360.1,311.2 359.3,311.7C358.6,312.3 357.8,312.9 357.1,313.5C356.3,314.1 355.6,314.7 354.9,315.3C354.1,315.9 353.4,316.5 352.6,317.2C351.9,317.9 351.1,318.5 350.3,319.2C349.5,319.9 348.7,320.6 347.9,321.3C347.0,322.0 346.1,322.7 345.2,323.4C344.3,324.1 343.3,324.8 342.3,325.4C341.2,326.0 340.2,326.6 339.1,327.2C337.9,327.7 336.8,328.2 335.6,328.6C334.4,329.0 333.1,329.4 331.9,329.6C330.6,329.8 329.4,330.0 328.1,330.0C326.8,330.1 325.5,330.0 324.3,329.8C323.0,329.7 321.8,329.4 320.5,329.0C319.3,328.7 318.2,328.2 317.1,327.7C315.9,327.1 314.9,326.5 313.9,325.8C312.9,325.1 311.9,324.3 311.0,323.6C310.1,322.8 309.3,321.9 308.6,321.1C307.8,320.3 307.1,319.4 306.4,318.6C305.7,317.7 305.1,316.9 304.5,316.1C303.9,315.3 303.3,314.4 302.7,313.7C302.1,312.9 301.6,312.2 301.0,311.5C300.4,310.8 299.8,310.1 299.1,309.5C298.5,308.8 297.8,308.2 297.2,307.6C296.5,307.0 295.7,306.5 295.0,305.9C294.3,305.3 293.5,304.7 292.7,304.2C291.9,303.6 291.1,303.0 290.2,302.4C289.4,301.7 288.6,301.1 287.8,300.4C287.0,299.8 286.2,299.1 285.5,298.3C284.7,297.6 284.0,296.8 283.4,296.0C282.7,295.2 282.1,294.3 281.6,293.4C281.1,292.6 280.7,291.7 280.3,290.7C280.0,289.8 279.7,288.9 279.5,287.9C279.3,286.9 279.2,286.0 279.2,285.0C279.2,284.0 279.3,283.1 279.4,282.1C279.5,281.1 279.7,280.2 280.0,279.2C280.2,278.3 280.5,277.3 280.9,276.4C281.2,275.5 281.6,274.6 282.0,273.7C282.4,272.8 282.9,271.9 283.3,271.0C283.8,270.2 284.3,269.3 284.8,268.5C285.3,267.6 285.8,266.8 286.3,265.9C286.9,265.1 287.4,264.3 288.0,263.4C288.6,262.6 289.2,261.8 289.8,261.0C290.5,260.2 291.1,259.4 291.8,258.7C292.5,257.9 293.3,257.2 294.1,256.5C294.9,255.8 295.7,255.1 296.6,254.5C297.5,253.9 298.4,253.3 299.4,252.8C300.3,252.3 301.4,251.8 302.4,251.4C303.5,251.0 304.6,250.7 305.7,250.4C306.8,250.1 308.0,249.9 309.1,249.8C310.2,249.7 311.4,249.6 312.6,249.6C313.7,249.5 314.9,249.6 316.0,249.6C317.1,249.7 318.3,249.8 319.4,249.9C320.4,250.0 321.5,250.2 322.6,250.3C323.6,250.5 324.6,250.6 325.6,250.8C326.6,250.9 327.6,251.0 328.6,251.1C329.5,251.1 330.5,251.2 331.4,251.2C332.4,251.2 333.4,251.2 334.3,251.1C335.3,251.0 336.3,250.9 337.3,250.8C338.4,250.6 339.4,250.5 340.5,250.3C341.6,250.1 342.8,249.9 344.0,249.7C345.2,249.5 346.4,249.3 347.6,249.1C348.9,249.0 350.2,248.8 351.5,248.7C352.8,248.7 354.2,248.6 355.5,248.7C356.9,248.7 358.2,248.8 359.6,249.0C360.9,249.2 362.2,249.5 363.5,249.8C364.7,250.2 365.9,250.6 367.1,251.2C368.2,251.7 369.3,252.4 370.3,253.1C371.2,253.8 372.1,254.6 372.9,255.4C373.7,256.3 374.4,257.2 375.0,258.1C375.6,259.1 376.1,260.1 376.5,261.1C376.9,262.2 377.2,263.2 377.4,264.3C377.6,265.4 377.7,266.5 377.8,267.5C377.9,268.6 377.9,269.6 377.9,270.7C377.8,271.7 377.7,272.8 377.6,273.8C377.6,274.8 377.4,275.8 377.3,276.7C377.2,277.7 377.0,278.7 376.9,279.6C376.7,280.5 376.6,281.4 376.4,282.3C376.3,283.2 376.2,284.1 376.0,285.0Z" stroke="#fde725"/>
+<path class="iso" style="--i:14" d="M551.1,150.0C550.6,151.5 550.0,153.1 549.4,154.6C548.8,156.0 548.1,157.5 547.4,158.9C546.6,160.4 545.9,161.7 545.1,163.1C544.4,164.5 543.6,165.8 542.8,167.1C542.0,168.5 541.2,169.8 540.4,171.1C539.7,172.4 538.9,173.6 538.1,174.9C537.3,176.2 536.5,177.4 535.6,178.7C534.8,179.9 534.0,181.2 533.1,182.4C532.2,183.6 531.3,184.8 530.4,186.0C529.5,187.2 528.5,188.4 527.4,189.6C526.4,190.8 525.3,191.9 524.2,193.0C523.0,194.1 521.8,195.1 520.6,196.2C519.3,197.2 518.0,198.1 516.7,199.1C515.3,200.0 513.9,200.8 512.4,201.7C511.0,202.5 509.4,203.2 507.9,203.9C506.4,204.7 504.8,205.3 503.2,205.9C501.6,206.6 500.0,207.1 498.4,207.7C496.7,208.2 495.1,208.7 493.4,209.2C491.8,209.7 490.1,210.2 488.4,210.7C486.7,211.1 485.0,211.5 483.3,212.0C481.6,212.4 479.9,212.8 478.1,213.2C476.3,213.6 474.6,214.0 472.7,214.4C470.9,214.8 469.1,215.2 467.2,215.5C465.3,215.8 463.4,216.1 461.5,216.4C459.6,216.6 457.6,216.9 455.6,217.0C453.6,217.1 451.6,217.2 449.6,217.2C447.6,217.2 445.6,217.1 443.6,216.9C441.6,216.6 439.5,216.3 437.6,215.9C435.6,215.5 433.7,214.9 431.9,214.2C430.0,213.6 428.2,212.8 426.5,211.9C424.8,211.0 423.2,209.9 421.7,208.8C420.2,207.7 418.8,206.5 417.5,205.2C416.2,203.9 415.1,202.5 414.0,201.1C413.0,199.6 412.1,198.1 411.2,196.6C410.4,195.1 409.7,193.5 409.1,192.0C408.5,190.4 408.0,188.8 407.5,187.3C407.0,185.7 406.7,184.2 406.3,182.7C405.9,181.2 405.7,179.7 405.3,178.2C405.0,176.8 404.8,175.4 404.5,174.0C404.1,172.6 403.8,171.2 403.5,169.9C403.2,168.5 402.8,167.2 402.4,165.9C402.0,164.6 401.6,163.3 401.1,162.0C400.7,160.7 400.2,159.4 399.7,158.1C399.3,156.8 398.7,155.5 398.3,154.1C397.8,152.8 397.3,151.4 396.9,150.0C396.4,148.6 396.0,147.2 395.7,145.7C395.3,144.3 395.0,142.8 394.8,141.3C394.7,139.8 394.5,138.3 394.5,136.8C394.5,135.3 394.6,133.8 394.8,132.3C395.0,130.8 395.3,129.3 395.7,127.8C396.1,126.3 396.6,124.8 397.2,123.4C397.8,121.9 398.5,120.5 399.3,119.1C400.1,117.8 401.0,116.4 402.0,115.1C403.0,113.8 404.0,112.5 405.1,111.3C406.2,110.0 407.4,108.8 408.6,107.7C409.8,106.5 411.0,105.3 412.3,104.2C413.6,103.1 414.9,102.0 416.3,101.0C417.6,99.9 419.0,98.9 420.4,97.9C421.9,96.9 423.3,95.9 424.8,95.0C426.3,94.0 427.8,93.1 429.4,92.2C430.9,91.3 432.5,90.5 434.2,89.7C435.8,88.9 437.5,88.2 439.3,87.5C441.0,86.8 442.7,86.2 444.6,85.7C446.4,85.1 448.2,84.7 450.1,84.3C451.9,84.0 453.8,83.7 455.7,83.5C457.6,83.3 459.6,83.3 461.5,83.3C463.4,83.3 465.3,83.4 467.2,83.7C469.1,83.9 470.9,84.2 472.8,84.6C474.6,85.0 476.4,85.5 478.2,86.1C479.9,86.6 481.7,87.2 483.3,87.9C485.0,88.5 486.6,89.3 488.2,90.0C489.8,90.7 491.3,91.5 492.9,92.2C494.4,92.9 495.9,93.7 497.3,94.4C498.8,95.2 500.2,95.9 501.7,96.6C503.1,97.3 504.6,98.0 506.1,98.7C507.5,99.4 509.0,100.0 510.5,100.7C512.0,101.3 513.6,101.9 515.1,102.6C516.7,103.2 518.3,103.8 519.9,104.5C521.5,105.1 523.2,105.8 524.8,106.5C526.5,107.2 528.1,108.0 529.8,108.8C531.4,109.6 533.0,110.5 534.6,111.4C536.2,112.4 537.8,113.4 539.2,114.5C540.7,115.6 542.1,116.7 543.4,118.0C544.7,119.2 545.9,120.5 546.9,121.9C548.0,123.2 548.9,124.7 549.7,126.2C550.5,127.7 551.1,129.2 551.6,130.8C552.1,132.3 552.5,134.0 552.7,135.6C552.9,137.2 553.0,138.8 552.9,140.4C552.8,142.0 552.6,143.7 552.3,145.3C552.0,146.9 551.6,148.5 551.1,150.0Z" stroke="#277f8e"/>
+<path class="iso" style="--i:15" d="M535.2,150.0C534.8,151.2 534.3,152.5 533.8,153.7C533.4,154.9 532.9,156.0 532.4,157.2C531.9,158.4 531.4,159.5 530.9,160.6C530.4,161.8 529.9,162.9 529.3,164.0C528.8,165.1 528.3,166.2 527.8,167.3C527.2,168.4 526.7,169.4 526.1,170.5C525.5,171.6 525.0,172.7 524.3,173.7C523.7,174.8 523.0,175.8 522.3,176.9C521.6,177.9 520.9,178.9 520.1,179.9C519.3,180.9 518.4,181.8 517.5,182.8C516.6,183.7 515.7,184.6 514.7,185.4C513.7,186.3 512.6,187.1 511.6,187.9C510.5,188.7 509.4,189.5 508.2,190.2C507.1,190.9 505.9,191.6 504.7,192.2C503.5,192.9 502.2,193.5 501.0,194.1C499.7,194.7 498.5,195.2 497.2,195.8C495.9,196.4 494.6,196.9 493.3,197.4C492.0,198.0 490.7,198.5 489.4,199.0C488.1,199.5 486.7,200.0 485.3,200.5C484.0,201.1 482.6,201.6 481.2,202.1C479.8,202.6 478.3,203.1 476.8,203.5C475.4,204.0 473.9,204.5 472.3,204.9C470.8,205.3 469.2,205.7 467.6,206.0C466.0,206.3 464.4,206.6 462.7,206.8C461.1,207.0 459.4,207.2 457.7,207.2C456.0,207.3 454.3,207.2 452.7,207.1C451.0,207.0 449.3,206.7 447.7,206.4C446.1,206.1 444.5,205.6 442.9,205.1C441.4,204.5 439.9,203.9 438.5,203.1C437.0,202.4 435.7,201.5 434.4,200.6C433.2,199.7 432.0,198.7 430.9,197.6C429.8,196.6 428.8,195.4 427.9,194.3C427.0,193.1 426.2,191.9 425.4,190.7C424.7,189.5 424.0,188.2 423.4,187.0C422.7,185.8 422.2,184.5 421.7,183.3C421.2,182.1 420.7,180.9 420.2,179.7C419.7,178.5 419.3,177.4 418.9,176.2C418.4,175.1 418.0,174.0 417.5,172.9C417.0,171.8 416.6,170.8 416.1,169.7C415.6,168.7 415.1,167.6 414.5,166.6C414.0,165.5 413.4,164.5 412.9,163.5C412.3,162.4 411.7,161.3 411.2,160.3C410.6,159.2 410.1,158.1 409.5,157.0C409.0,155.9 408.5,154.7 408.0,153.6C407.6,152.4 407.2,151.2 406.8,150.0C406.5,148.8 406.2,147.6 406.0,146.3C405.8,145.1 405.7,143.8 405.7,142.6C405.7,141.3 405.7,140.1 405.9,138.8C406.0,137.6 406.3,136.3 406.6,135.1C406.9,133.8 407.4,132.6 407.9,131.4C408.4,130.2 408.9,129.0 409.6,127.9C410.2,126.7 410.9,125.6 411.6,124.5C412.4,123.4 413.2,122.3 414.0,121.3C414.9,120.2 415.8,119.2 416.7,118.2C417.6,117.2 418.5,116.2 419.5,115.2C420.5,114.2 421.5,113.3 422.5,112.3C423.5,111.4 424.6,110.5 425.7,109.6C426.8,108.7 427.9,107.8 429.0,106.9C430.2,106.1 431.4,105.2 432.6,104.4C433.8,103.6 435.1,102.9 436.4,102.2C437.7,101.4 439.0,100.8 440.4,100.2C441.8,99.6 443.2,99.0 444.7,98.5C446.1,98.0 447.6,97.6 449.2,97.3C450.7,97.0 452.2,96.7 453.8,96.5C455.3,96.4 456.9,96.3 458.5,96.2C460.0,96.2 461.6,96.3 463.1,96.4C464.7,96.6 466.2,96.8 467.7,97.0C469.3,97.3 470.8,97.6 472.2,98.0C473.7,98.3 475.1,98.7 476.5,99.1C477.9,99.5 479.3,100.0 480.6,100.4C482.0,100.9 483.3,101.4 484.6,101.8C485.9,102.2 487.2,102.7 488.5,103.1C489.9,103.5 491.1,103.9 492.5,104.3C493.8,104.7 495.1,105.1 496.4,105.5C497.8,105.8 499.1,106.2 500.5,106.6C501.9,106.9 503.3,107.3 504.8,107.6C506.2,108.0 507.7,108.4 509.2,108.8C510.6,109.3 512.1,109.7 513.6,110.2C515.1,110.7 516.6,111.3 518.0,111.9C519.5,112.5 520.9,113.2 522.3,114.0C523.7,114.7 525.0,115.5 526.3,116.4C527.5,117.3 528.7,118.3 529.8,119.3C530.8,120.4 531.8,121.5 532.7,122.6C533.6,123.8 534.3,125.0 535.0,126.2C535.6,127.5 536.1,128.8 536.5,130.1C536.9,131.4 537.2,132.8 537.4,134.1C537.5,135.5 537.6,136.9 537.5,138.2C537.5,139.6 537.4,140.9 537.2,142.2C537.0,143.6 536.7,144.9 536.3,146.2C536.0,147.5 535.6,148.8 535.2,150.0Z" stroke="#1fa187"/>
+<path class="iso" style="--i:16" d="M520.5,150.0C520.2,151.0 520.0,151.9 519.7,152.9C519.4,153.8 519.2,154.7 518.9,155.6C518.6,156.6 518.3,157.5 518.0,158.4C517.7,159.3 517.4,160.2 517.0,161.1C516.7,162.0 516.4,162.9 516.0,163.7C515.6,164.6 515.2,165.5 514.7,166.4C514.3,167.2 513.8,168.1 513.3,168.9C512.8,169.7 512.2,170.6 511.6,171.4C511.0,172.2 510.4,172.9 509.7,173.7C509.0,174.4 508.3,175.2 507.5,175.9C506.8,176.6 506.0,177.2 505.1,177.9C504.3,178.5 503.5,179.1 502.6,179.7C501.7,180.3 500.8,180.9 499.9,181.5C499.0,182.0 498.1,182.6 497.2,183.1C496.3,183.7 495.3,184.2 494.4,184.7C493.4,185.2 492.5,185.7 491.5,186.2C490.6,186.8 489.6,187.3 488.6,187.8C487.6,188.3 486.6,188.8 485.6,189.3C484.5,189.9 483.5,190.4 482.4,190.9C481.3,191.4 480.2,191.9 479.1,192.4C478.0,192.8 476.8,193.3 475.6,193.7C474.4,194.1 473.2,194.5 471.9,194.8C470.7,195.1 469.4,195.4 468.1,195.6C466.8,195.9 465.4,196.0 464.1,196.1C462.8,196.1 461.4,196.1 460.1,196.1C458.8,196.0 457.5,195.8 456.2,195.5C454.9,195.3 453.6,194.9 452.4,194.5C451.2,194.1 450.0,193.5 448.9,193.0C447.7,192.4 446.7,191.7 445.7,191.0C444.6,190.3 443.7,189.5 442.8,188.7C441.9,187.9 441.1,187.0 440.3,186.2C439.5,185.3 438.8,184.4 438.1,183.5C437.5,182.6 436.8,181.7 436.2,180.8C435.6,179.9 435.1,179.0 434.5,178.1C434.0,177.2 433.5,176.4 433.0,175.5C432.4,174.7 431.9,173.9 431.4,173.0C430.9,172.2 430.4,171.4 429.8,170.6C429.3,169.8 428.7,169.1 428.1,168.3C427.6,167.5 427.0,166.7 426.4,165.9C425.8,165.2 425.2,164.4 424.6,163.6C424.1,162.8 423.5,161.9 422.9,161.1C422.4,160.2 421.8,159.4 421.3,158.5C420.8,157.6 420.3,156.7 419.9,155.8C419.5,154.9 419.1,153.9 418.8,152.9C418.5,152.0 418.2,151.0 418.1,150.0C417.9,149.0 417.8,148.0 417.8,147.0C417.7,146.0 417.8,145.0 417.9,144.0C418.0,143.0 418.2,142.0 418.5,141.0C418.7,140.0 419.0,139.0 419.4,138.1C419.8,137.1 420.2,136.2 420.7,135.2C421.1,134.3 421.6,133.4 422.2,132.5C422.7,131.6 423.3,130.7 423.9,129.9C424.5,129.0 425.1,128.1 425.8,127.3C426.4,126.5 427.1,125.6 427.8,124.8C428.5,124.0 429.2,123.2 430.0,122.4C430.7,121.6 431.5,120.8 432.3,120.1C433.1,119.3 433.9,118.6 434.8,117.9C435.6,117.2 436.5,116.4 437.5,115.8C438.4,115.1 439.4,114.5 440.4,113.9C441.4,113.3 442.4,112.8 443.5,112.3C444.5,111.8 445.7,111.3 446.8,110.9C447.9,110.5 449.1,110.2 450.3,109.9C451.5,109.6 452.7,109.4 453.9,109.3C455.1,109.1 456.3,109.0 457.5,109.0C458.8,108.9 460.0,109.0 461.2,109.0C462.4,109.1 463.6,109.2 464.8,109.3C466.0,109.5 467.1,109.6 468.3,109.8C469.4,110.0 470.6,110.2 471.7,110.5C472.8,110.7 473.9,110.9 475.0,111.1C476.1,111.3 477.1,111.5 478.2,111.7C479.3,111.9 480.4,112.1 481.4,112.3C482.5,112.5 483.6,112.6 484.7,112.8C485.8,112.9 486.9,113.1 488.1,113.2C489.2,113.4 490.4,113.5 491.6,113.6C492.8,113.8 494.0,113.9 495.2,114.1C496.4,114.3 497.7,114.5 498.9,114.7C500.2,115.0 501.5,115.3 502.7,115.6C503.9,116.0 505.2,116.3 506.4,116.8C507.6,117.3 508.8,117.8 509.9,118.3C511.0,118.9 512.1,119.6 513.1,120.3C514.1,121.0 515.1,121.8 516.0,122.6C516.8,123.4 517.6,124.3 518.3,125.2C519.0,126.1 519.6,127.1 520.1,128.1C520.6,129.1 521.0,130.2 521.4,131.2C521.7,132.3 521.9,133.4 522.1,134.4C522.2,135.5 522.3,136.6 522.3,137.7C522.4,138.7 522.3,139.8 522.2,140.9C522.1,141.9 522.0,143.0 521.8,144.0C521.7,145.0 521.4,146.1 521.2,147.1C521.0,148.1 520.7,149.0 520.5,150.0Z" stroke="#4ac16d"/>
+<path class="iso" style="--i:17" d="M506.9,150.0C506.8,150.7 506.7,151.4 506.6,152.1C506.5,152.8 506.4,153.5 506.2,154.2C506.1,154.9 505.9,155.6 505.7,156.2C505.5,156.9 505.3,157.6 505.1,158.3C504.9,158.9 504.6,159.6 504.3,160.3C504.0,160.9 503.7,161.6 503.3,162.2C503.0,162.8 502.6,163.4 502.1,164.0C501.7,164.6 501.2,165.2 500.8,165.8C500.3,166.4 499.8,166.9 499.2,167.4C498.7,168.0 498.1,168.5 497.5,169.0C497.0,169.5 496.4,170.0 495.8,170.4C495.2,170.9 494.6,171.4 493.9,171.8C493.3,172.3 492.7,172.7 492.0,173.2C491.4,173.6 490.8,174.1 490.1,174.5C489.5,174.9 488.8,175.4 488.2,175.8C487.5,176.3 486.8,176.7 486.1,177.2C485.4,177.6 484.8,178.1 484.0,178.5C483.3,179.0 482.6,179.4 481.8,179.9C481.0,180.3 480.3,180.7 479.4,181.1C478.6,181.5 477.8,181.9 476.9,182.2C476.1,182.6 475.2,182.9 474.2,183.2C473.3,183.4 472.4,183.7 471.4,183.8C470.5,184.0 469.5,184.1 468.5,184.2C467.6,184.2 466.6,184.2 465.6,184.2C464.7,184.1 463.7,184.0 462.8,183.8C461.8,183.6 460.9,183.3 460.0,183.0C459.1,182.7 458.2,182.3 457.4,181.9C456.6,181.5 455.8,181.0 455.0,180.5C454.2,180.0 453.5,179.5 452.8,178.9C452.1,178.4 451.5,177.8 450.9,177.2C450.3,176.6 449.7,176.0 449.1,175.4C448.6,174.8 448.0,174.2 447.5,173.6C447.0,173.0 446.5,172.5 446.0,171.9C445.5,171.3 445.0,170.8 444.5,170.2C444.0,169.7 443.5,169.1 443.0,168.6C442.5,168.1 442.0,167.6 441.5,167.0C440.9,166.5 440.4,166.0 439.9,165.5C439.3,164.9 438.8,164.4 438.2,163.9C437.7,163.3 437.1,162.8 436.6,162.2C436.1,161.6 435.6,161.1 435.1,160.4C434.6,159.8 434.1,159.2 433.7,158.6C433.2,157.9 432.8,157.2 432.5,156.5C432.1,155.9 431.8,155.2 431.6,154.4C431.3,153.7 431.1,153.0 431.0,152.2C430.8,151.5 430.7,150.7 430.7,150.0C430.7,149.3 430.7,148.5 430.8,147.7C430.8,147.0 430.9,146.2 431.1,145.5C431.3,144.8 431.5,144.0 431.7,143.3C431.9,142.6 432.2,141.9 432.5,141.2C432.8,140.5 433.2,139.8 433.5,139.1C433.9,138.4 434.2,137.7 434.6,137.1C435.0,136.4 435.4,135.7 435.9,135.1C436.3,134.4 436.7,133.8 437.2,133.2C437.7,132.5 438.1,131.9 438.6,131.3C439.2,130.7 439.7,130.1 440.2,129.5C440.8,128.9 441.4,128.3 442.0,127.8C442.6,127.2 443.2,126.7 443.9,126.2C444.6,125.7 445.3,125.2 446.0,124.7C446.7,124.3 447.5,123.9 448.3,123.5C449.0,123.1 449.9,122.8 450.7,122.5C451.5,122.2 452.4,122.0 453.2,121.8C454.1,121.6 455.0,121.4 455.9,121.3C456.8,121.2 457.7,121.1 458.5,121.0C459.4,121.0 460.3,121.0 461.2,121.0C462.1,121.0 462.9,121.0 463.8,121.1C464.6,121.1 465.5,121.2 466.3,121.3C467.2,121.3 468.0,121.4 468.8,121.5C469.6,121.5 470.4,121.6 471.2,121.7C472.0,121.7 472.8,121.8 473.6,121.8C474.4,121.8 475.2,121.8 476.0,121.8C476.9,121.9 477.7,121.8 478.5,121.8C479.4,121.8 480.3,121.8 481.1,121.8C482.0,121.8 482.9,121.8 483.9,121.8C484.8,121.8 485.7,121.9 486.7,121.9C487.6,122.0 488.6,122.1 489.5,122.2C490.5,122.3 491.5,122.5 492.4,122.7C493.4,122.9 494.3,123.2 495.2,123.5C496.1,123.8 497.0,124.2 497.9,124.6C498.7,125.0 499.5,125.5 500.3,126.0C501.0,126.5 501.7,127.1 502.4,127.7C503.0,128.3 503.6,128.9 504.1,129.6C504.7,130.3 505.1,131.0 505.5,131.8C505.9,132.5 506.2,133.3 506.5,134.1C506.8,134.8 507.0,135.6 507.2,136.4C507.3,137.2 507.4,138.0 507.5,138.8C507.6,139.6 507.6,140.4 507.6,141.1C507.7,141.9 507.6,142.7 507.6,143.4C507.6,144.2 507.5,144.9 507.5,145.7C507.4,146.4 507.3,147.1 507.2,147.9C507.1,148.6 507.1,149.3 506.9,150.0Z" stroke="#a0da39"/>
+<path class="iso" style="--i:18" d="M494.0,150.0C494.0,150.5 493.9,150.9 493.9,151.4C493.8,151.8 493.8,152.3 493.7,152.7C493.6,153.2 493.5,153.6 493.4,154.1C493.3,154.5 493.1,155.0 492.9,155.4C492.8,155.8 492.6,156.3 492.4,156.7C492.1,157.1 491.9,157.5 491.6,157.9C491.4,158.3 491.1,158.7 490.8,159.1C490.5,159.5 490.2,159.8 489.9,160.2C489.5,160.6 489.2,160.9 488.9,161.3C488.5,161.6 488.1,161.9 487.8,162.3C487.4,162.6 487.1,162.9 486.7,163.2C486.3,163.6 485.9,163.9 485.6,164.2C485.2,164.5 484.8,164.8 484.4,165.2C484.0,165.5 483.7,165.8 483.3,166.1C482.9,166.5 482.5,166.8 482.0,167.1C481.6,167.5 481.2,167.8 480.8,168.1C480.3,168.4 479.9,168.8 479.4,169.1C478.9,169.4 478.4,169.7 477.9,170.0C477.4,170.2 476.8,170.5 476.3,170.7C475.7,171.0 475.2,171.2 474.6,171.4C474.0,171.5 473.4,171.7 472.8,171.8C472.2,171.9 471.6,172.0 470.9,172.0C470.3,172.0 469.7,172.0 469.1,171.9C468.4,171.9 467.8,171.8 467.2,171.7C466.6,171.5 466.0,171.4 465.5,171.2C464.9,171.0 464.3,170.7 463.8,170.5C463.2,170.2 462.7,169.9 462.2,169.6C461.7,169.3 461.3,169.0 460.8,168.7C460.3,168.4 459.9,168.0 459.5,167.7C459.1,167.4 458.7,167.0 458.3,166.7C457.9,166.4 457.5,166.0 457.1,165.7C456.7,165.4 456.3,165.1 455.9,164.8C455.6,164.5 455.2,164.2 454.8,163.9C454.4,163.6 454.0,163.3 453.6,163.0C453.2,162.7 452.8,162.4 452.4,162.1C452.0,161.9 451.5,161.6 451.1,161.3C450.7,161.0 450.3,160.7 449.9,160.3C449.5,160.0 449.1,159.7 448.7,159.3C448.3,159.0 447.9,158.6 447.5,158.2C447.2,157.8 446.8,157.4 446.5,157.0C446.2,156.6 445.9,156.2 445.7,155.7C445.4,155.3 445.2,154.8 445.0,154.4C444.8,153.9 444.7,153.4 444.6,152.9C444.5,152.5 444.4,152.0 444.3,151.5C444.3,151.0 444.3,150.5 444.3,150.0C444.3,149.5 444.4,149.0 444.4,148.5C444.5,148.0 444.6,147.6 444.7,147.1C444.8,146.6 445.0,146.1 445.1,145.7C445.3,145.2 445.5,144.7 445.7,144.3C445.8,143.8 446.0,143.4 446.3,142.9C446.5,142.4 446.7,142.0 446.9,141.6C447.2,141.1 447.4,140.7 447.7,140.3C448.0,139.8 448.2,139.4 448.5,139.0C448.8,138.6 449.2,138.2 449.5,137.8C449.8,137.4 450.2,137.0 450.6,136.6C451.0,136.2 451.4,135.9 451.8,135.6C452.2,135.2 452.7,134.9 453.1,134.6C453.6,134.3 454.1,134.1 454.6,133.8C455.1,133.6 455.7,133.4 456.2,133.2C456.7,133.0 457.3,132.8 457.8,132.7C458.4,132.6 459.0,132.5 459.5,132.4C460.1,132.3 460.7,132.2 461.2,132.2C461.8,132.1 462.4,132.1 462.9,132.1C463.5,132.0 464.0,132.0 464.5,132.0C465.1,132.0 465.6,132.0 466.1,132.0C466.7,132.0 467.2,132.0 467.7,132.0C468.2,132.0 468.7,131.9 469.2,131.9C469.7,131.9 470.3,131.8 470.8,131.8C471.3,131.7 471.8,131.7 472.4,131.6C472.9,131.5 473.4,131.5 474.0,131.4C474.6,131.3 475.1,131.2 475.7,131.2C476.3,131.1 476.9,131.1 477.5,131.0C478.1,131.0 478.7,131.0 479.4,131.0C480.0,131.0 480.6,131.0 481.3,131.0C481.9,131.1 482.5,131.2 483.1,131.3C483.8,131.4 484.4,131.6 485.0,131.8C485.6,132.0 486.1,132.2 486.7,132.4C487.2,132.7 487.8,133.0 488.3,133.3C488.7,133.7 489.2,134.0 489.6,134.4C490.0,134.8 490.4,135.2 490.8,135.7C491.1,136.1 491.4,136.6 491.7,137.0C492.0,137.5 492.2,138.0 492.4,138.5C492.6,139.0 492.8,139.5 493.0,140.0C493.1,140.5 493.2,141.0 493.3,141.5C493.4,142.0 493.5,142.5 493.6,142.9C493.7,143.4 493.7,143.9 493.8,144.4C493.8,144.9 493.9,145.4 493.9,145.8C493.9,146.3 493.9,146.8 494.0,147.2C494.0,147.7 494.0,148.2 494.0,148.6C494.0,149.1 494.0,149.5 494.0,150.0Z" stroke="#fde725"/></svg>
+        <div class="portrait">
+          <span class="initials" aria-hidden="true">PK</span>
+          <img src="images/profile_pic.png" alt="Portrait of Pranav S. Kulkarni" onerror="this.remove()">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="voice" aria-label="Quotes from press coverage">
+  <div class="wrap">
+    <figure class="lead-q">
+      <div>
+        <blockquote><p>“These diseases are not on the public health officials' radar.”</p></blockquote>
+        <figcaption>On South American arenaviruses, speaking to <a href="https://www.sciencenews.org/article/rodent-arenaviruses-hantavirus-climate">Science News</a>, May 2026</figcaption>
+      </div>
+    </figure>
+    <div class="q-row">
+      <figure>
+        <blockquote><p>“We are basically expanding the human footprint on places where it hasn't been.”</p></blockquote>
+        <figcaption>On climate, land use and spillover, in <a href="https://www.nytimes.com/2026/08/21/world/americas/rare-south-american-diseases-climate-change-pandemics.html">The New York Times</a>, August 2026</figcaption>
+      </figure>
+      <figure>
+        <blockquote><p>“These are high impact diseases, but they are fairly neglected…”</p></blockquote>
+        <figcaption>On rodent-borne hemorrhagic fevers, in <a href="https://www.livescience.com/health/viruses-infections-disease/hantavirus-outbreaks-could-become-more-likely-as-virus-carrying-rodents-expand-their-range-model-finds">Live Science</a>, May 2026</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="in-the-news">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>In the news</h2>
+      <p class="lede">Our 2026 study on climate and arenavirus spillover was picked up by outlets around the world, from <em>Science News</em> to <em>The New York Times</em>. A follow-up preprint takes the same approach to hantaviruses worldwide.</p>
+    </div>
+
+    <div class="feature">
+      <div>
+        <p class="paper-title">Climate-driven changes in zoonotic risk of arenaviral hemorrhagic fevers in South America</p>
+        <p class="cite"><b>Kulkarni PS</b>, Flores-Pérez NY, Jian AH, Bird BH, Johnson CK, Uhart M, Pandit PS. <em>npj Viruses</em> 4, 23 (2026). <a href="https://doi.org/10.1038/s44298-026-00189-2">Read the open-access paper</a></p>
+        <p>Three rodent-borne arenaviruses, Guanarito, Machupo and Junín, cause hemorrhagic fevers in South America that can kill up to about a third of patients. They get far less attention than their African relative, Lassa virus. We combined machine-learning habitat models for six rodent reservoirs with climate projections for 2041–2060 and human population data to estimate where people's risk of infection is likely to rise.</p>
+        <p>The headline: risk doesn't just grow, it moves, into places where doctors and public health systems have never had to deal with these diseases.</p>
+        <ul class="findings">
+          <li><span class="virus">Guanarito<small>Venezuelan HF</small></span><span>Projected to spread beyond central Venezuela into Colombia, northern Brazil, and the border regions of Suriname.</span></li>
+          <li><span class="virus">Machupo<small>Bolivian HF</small></span><span>Projected to climb from the Bolivian lowlands into the Andean foothills and mountains.</span></li>
+          <li><span class="virus">Junín<small>Argentine HF</small></span><span>Projected to shift within Argentina, easing in some grasslands while rising in new areas.</span></li>
+        </ul>
+        <p style="margin-top:1.25rem;font-size:.95rem;color:var(--muted)">The models are part of <a href="https://atlas-arena.org/">AtlasArena</a>, an open platform funded by Wellcome for tracking climate-sensitive spillover risk.</p>
+      </div>
+      <div class="quotes">
+        <div class="reach" aria-label="Coverage at a glance">
+          <div><b id="n-outlets">30+</b><span>news stories</span></div>
+          <div><b id="n-countries">10+</b><span>countries</span></div>
+        </div>
+        <div class="followup" id="hantavirus">
+          <div class="when">Follow-up preprint, July 2026</div>
+          <h3>Ecological cascades and future hantavirus spillover risk in a changing climate</h3>
+          <p>Much of the arenavirus coverage ran alongside the hantavirus outbreak on the MV Hondius cruise ship, and several stories connected the two families of rodent-borne viruses. Our follow-up applies the same modeling framework to every known zoonotic hantavirus, worldwide.</p>
+          <div class="stat">
+            <div><b>61</b><span>reservoir species</span></div>
+            <div><b>89</b><span>virus–host pairs</span></div>
+            <div><b>~75%</b><span>of modeled land sees risk rise by 2041–2060</span></div>
+          </div>
+          <p style="font-family:var(--sans);font-size:.85rem;color:var(--muted)">Pandit P, Jian AH, Gupta A, <b style="color:var(--ink)">Kulkarni P</b>. <em>bioRxiv</em>, 2026. Not yet peer reviewed.</p>
+          <a class="btn primary" href="https://doi.org/10.64898/2026.07.13.738318">Read the preprint</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="outlets">
+      <p>Featured in</p>
+      <ul id="outlet-strip"></ul>
+    </div>
+
+    <div class="coverage">
+      <div class="coverage-head">
+        <h3>All coverage</h3>
+        <div class="seg" role="group" aria-label="Filter coverage">
+          <button type="button" data-filter="english" aria-pressed="true">English</button>
+          <button type="button" data-filter="all" aria-pressed="false">All languages</button>
+        </div>
+      </div>
+      <ul class="press" id="press-list"></ul>
+      <div class="more"><button type="button" class="btn" id="press-more">Show all</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Research</h2>
+      <p class="lede">My work sits where animal health, human health, and the environment meet, the area often called One Health. The common thread is using data and models to make decisions about disease before the costs show up.</p>
+    </div>
+    <div class="threads">
+      <div class="thread now">
+        <div class="when">2023 to now, UC Davis</div>
+        <h3>Climate change and zoonotic spillover</h3>
+        <p>In the EpiPandit Lab and the One Health Institute, I model how shifting climate and land use change the chance that a virus jumps from wildlife or livestock to people.</p>
+        <div class="project">
+          <h4>AtlasArena</h4>
+          <p class="meta">Wellcome Trust, PI Dr. Pranav Pandit</p>
+          <p>Mapping the climate-driven spillover risk of New World arenaviruses by linking human exposure to changing distributions of their rodent reservoirs. Related work extends the approach to the Junín virus reservoir and to hantaviruses.</p>
+        </div>
+        <div class="project">
+          <h4>H5N1 avian influenza in California dairy herds</h4>
+          <p class="meta">USDA, PI Dr. Pranav Pandit</p>
+          <p>Building a nested agent-based model of how highly pathogenic avian influenza moves within and between dairy herds, and estimating its transmission parameters from the California outbreak.</p>
+        </div>
+      </div>
+      <div class="thread">
+        <div class="when">2017 to 2024, Wageningen and Utrecht</div>
+        <h3>Dairy herd health, economics, and policy</h3>
+        <p>My PhD asked how Dutch dairy farmers decide which cows to replace, and how environmental policies that cap herd sizes change those decisions and their costs.</p>
+        <div class="project">
+          <h4>Replacement decisions under policy constraints</h4>
+          <p class="meta">Joint PhD, Wageningen University &amp; Utrecht University</p>
+          <p>Survival analysis of national cow records, farmer surveys, and dynamic programming models of herd economics. The thesis, <a href="https://escholarship.org/content/qt246298qt/qt246298qt_noSplash_901536be2763fe6084f6b43f7abc9b70.pdf">Dairy cattle replacement under changing agri-environmental policies</a>, is free to read.</p>
+        </div>
+        <div class="project">
+          <h4>Genetics of infectious disease</h4>
+          <p class="meta">MSc, Wageningen University</p>
+          <p>Separating genetic susceptibility from infection exposure for digital dermatitis in Dutch dairy cattle.</p>
+        </div>
+      </div>
+    </div>
+    <div class="skills">
+      <h3>Methods I use</h3>
+      <p>Species distribution modeling, spatio-temporal analysis, machine learning, agent-based and herd simulation, survival analysis, Bayesian optimization, Markov decision processes and dynamic programming, Monte Carlo simulation. Mostly in R, Python, and QGIS.</p>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Publications</h2>
+      <p class="lede">New: our <a href="#hantavirus">hantavirus preprint</a> extends the arenavirus work worldwide. For citation counts and the full list, see <a href="https://scholar.google.com/citations?user=Ql2j3FEAAAAJ&amp;hl=en">Google Scholar</a>.</p>
+    </div>
+    <div class="seg pub-tabs" role="group" aria-label="Filter publications">
+      <button type="button" data-pub="article" aria-pressed="true">Journal articles</button>
+      <button type="button" data-pub="other" aria-pressed="false">Preprints, proceedings &amp; thesis</button>
+    </div>
+    <ul class="pubs" id="pub-list"></ul>
+  </div>
+</section>
+
+<section id="talks">
+  <div class="wrap two">
+    <div>
+      <h2>Talks &amp; workshops</h2>
+      <p class="lede">Recent presentations and the workshops I've co-led.</p>
+      <ul class="rows">
+        <li><span class="y">2026</span><div><div class="what">Co-instructor, AI and data-driven epidemiology workshop</div><div class="where">SVEPM, London</div></div></li>
+        <li><span class="y">2025</span><div><div class="what">Estimating transmission parameters of the HPAI outbreak in dairy cows</div><div class="where">Western States Modeling Symposium, online</div></div></li>
+        <li><span class="y">2025</span><div><div class="what">Co-instructor, AI/ML in disease ecology (20-hour workshop)</div><div class="where">EEID, University of Notre Dame</div></div></li>
+        <li><span class="y">2024</span><div><div class="what">AtlasArena</div><div class="where">17th ISVEE, Sydney</div></div></li>
+        <li><span class="y">2024</span><div><div class="what">Climate-driven risk of zoonotic arenaviral spillover in South America</div><div class="where">EEID, Stanford (poster) and UC Davis Postdoctoral Symposium (talk)</div></div></li>
+      </ul>
+      <details>
+        <summary>Earlier talks</summary>
+        <ul class="rows">
+          <li><span class="y">2023</span><div><div class="what">Economic impact of agri-environmental policies on replacement in Dutch dairy cattle</div><div class="where">ISESSAH, Helsinki</div></div></li>
+          <li><span class="y">2022</span><div><div class="what">Impact of national agricultural policy on the survival of Dutch dairy cows</div><div class="where">16th ISVEE, Halifax <span class="award">Bursary award</span></div></div></li>
+          <li><span class="y">2022</span><div><div class="what">Dutch dairy farmers' perspectives on culling reasons and strategies</div><div class="where">VEEC Study Day, Wageningen; ISESSAH, Halifax (poster)</div></div></li>
+          <li><span class="y">2021</span><div><div class="what">Survival analysis of Dutch dairy farmers' replacement strategies over 10 years of policy change</div><div class="where">SVEPM, Toulouse/online <span class="award">Bursary award</span></div></div></li>
+          <li><span class="y">2015</span><div><div class="what">Genotyping HF crossbred cattle for beta-casein genes</div><div class="where">ICBB, Pune (poster) <span class="award">Best poster award</span></div></div></li>
+        </ul>
+      </details>
+    </div>
+    <div>
+      <h2>Teaching</h2>
+      <p class="lede">Statistics and epidemiology for veterinary and public health students.</p>
+      <div class="course"><div class="code">MPM 204</div><div class="role" style="color:var(--ink)">Applied Population Statistics III</div><div class="role">Lecturer, UC Davis</div><p>Student evaluations of <span class="score">4.85/5</span> and <span class="score">4.9/5</span> from the 2024 and 2025 classes.</p></div>
+      <div class="course"><div class="code">PHR/SPH 266</div><div class="role">Instructor of record, Spring quarter, UC Davis</div></div>
+      <div class="course"><div class="code">VET 401</div><div class="role" style="color:var(--ink)">Scientific inference</div><div class="role">Discussion facilitator, DVM classes of 2028 and 2029, UC Davis</div></div>
+      <div class="course"><div class="code">MPM 200</div><div class="role" style="color:var(--ink)">Information management for epidemiologists</div><div class="role">Guest lecturer, UC Davis</div></div>
+      <div class="course"><div class="code">QVE 20306</div><div class="role" style="color:var(--ink)">Veterinary epidemiology and economics</div><div class="role">Teaching assistant, Wageningen University</div></div>
+      <p style="margin-top:1.25rem;font-size:.95rem;color:var(--muted)">I've also supervised graduate and undergraduate theses, and wrote for the <a href="https://www.academictransfer.com/en/blog/author/pranav-s-kulkarni/">Academic Transfer blog</a> from 2019 to 2024.</p>
+    </div>
+  </div>
+</section>
+
+<section id="background">
+  <div class="wrap two">
+    <div>
+      <h2>Background</h2>
+      <p>I trained as a veterinarian in India and spent a year in large-animal practice before moving into epidemiology.</p>
+      <p>I'm an invited full member of Sigma Xi, review for Web of Science journals and ISESSAH, and am active in the Open Science Community Utrecht.</p>
+    </div>
+    <ul class="bg-list">
+      <li><b>Postdoctoral researcher</b><span>One Health Institute and Dept. of Population Health &amp; Reproduction, UC Davis, 2023 to now</span></li>
+      <li><b>PhD, 2024</b><span>Wageningen University &amp; Research and Utrecht University (joint degree)</span></li>
+      <li><b>MSc, 2018</b><span>Wageningen University &amp; Research</span></li>
+      <li><b>BVSc &amp; AH, 2015</b><span>Maharashtra Animal and Fishery Sciences University, Nagpur</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<section id="contact" class="contact">
+  <div class="wrap grid">
+    <div>
+      <h2>Get in touch</h2>
+      <p>I'm glad to hear from collaborators, students, and journalists covering climate and infectious disease.</p>
+      <p class="email"><a id="email-link" href="#contact">pskul [at] ucdavis.edu</a></p>
+      <p class="addr">VM3B 4215, 1089 Veterinary Medicine Dr., Davis, CA 95616</p>
+    </div>
+    <ul class="links-list">
+      <li><a href="https://scholar.google.com/citations?user=Ql2j3FEAAAAJ&amp;hl=en">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0003-4105-7559">ORCID</a></li>
+      <li><a href="https://www.linkedin.com/in/pranav--kulkarni/">LinkedIn</a></li>
+      <li><a href="https://atlas-arena.org/">AtlasArena</a></li>
+      <li><a href="cv.pdf">CV (PDF)</a></li>
+    </ul>
+  </div>
+</section>
+<footer class="foot"><div class="wrap">© <span id="yr">2026</span> Pranav S. Kulkarni. Contour graphic is decorative, not study data.</div></footer>
+
+<script>
+/* ---------- Press coverage: add new stories here. Leave url "" if you don't have a link yet. ---------- */
+const PRESS = [
+  {d:"2026-08-21",src:"The New York Times",c:"US",en:1,top:1,t:"Rare South American Diseases Offer Clues on the Next Pandemic",url:"https://www.nytimes.com/2026/08/21/world/americas/rare-south-american-diseases-climate-change-pandemics.html"},
+  {d:"2026-05-15",src:"India Today",c:"India",en:1,top:1,t:"Hantavirus outbreak: When weather changes, the virus follows",url:"https://www.indiatoday.in/health/story/hantavirus-outbreak-climate-change-rodent-spread-south-america-2912389-2026-05-16"},
+  {d:"2026-05-14",src:"The Independent",c:"UK",en:1,top:1,t:"Hantavirus has people worried, but these outbreaks could become even more common. This is why",url:"https://www.the-independent.com/news/science/hantavirus-rats-outbreaks-cruise-ship-b2976803.html"},
+  {d:"2026-05-13",src:"A-Z Animals",c:"US",en:1,t:"Could Climate Change Shift Where Rodent-Borne Viruses Show Up?",url:"https://a-z-animals.com/articles/could-climate-change-shift-where-rodent-borne-viruses-show-up/"},
+  {d:"2026-05-13",src:"Phụ nữ Mới",c:"Vietnam",en:0,t:"Biến đổi khí hậu làm thay đổi bản đồ lây lan của virus Hanta, giới khoa học cảnh báo",url:"https://phunumoi.net.vn/bien-doi-khi-hau-lam-thay-doi-ban-do-lay-lan-cua-virus-hanta-gioi-khoa-hoc-canh-bao-d350872.html"},
+  {d:"2026-05-12",src:"Live Science",c:"US",en:1,top:1,t:"Hantavirus outbreaks could become more likely as virus-carrying rodents expand their range, model finds",url:"https://www.livescience.com/health/viruses-infections-disease/hantavirus-outbreaks-could-become-more-likely-as-virus-carrying-rodents-expand-their-range-model-finds"},
+  {d:"2026-05-12",src:"Detik.com",c:"Indonesia",en:0,t:"Ramalan Mengerikan Ledakan Populasi Tikus Pembawa Virus Mematikan",url:"https://inet.detik.com/science/d-8487088/ramalan-mengerikan-ledakan-populasi-tikus-pembawa-virus-mematikan"},
+  {d:"2026-05-12",src:"Asatunews",c:"Indonesia",en:0,t:"Perubahan Iklim Perluas Sebaran Hantavirus dan Risiko Penyakit ke Manusia",url:"https://www.asatunews.co.id/perubahan-iklim-sebaran-hantavirus-meningkat"},
+  {d:"2026-05-12",src:"Harianbasis",c:"Indonesia",en:0,t:"Perubahan Iklim Perluas Sebaran Hantavirus dan Risiko Spillover di Amerika",url:"https://www.harianbasis.co/perubahan-iklim-perluas-sebaran-hantavirus"},
+  {d:"2026-05-12",src:"Info Nasional",c:"Indonesia",en:0,t:"Perubahan Iklim Tingkatkan Risiko Penularan Hantavirus dari Hewan ke Manusia",url:"https://www.infonasional.com/risiko-hantavirus-perubahan-iklim-argentina"},
+  {d:"2026-05-12",src:"BISIK",c:"Indonesia",en:0,t:"Hantavirus pada MV Hondius: Kasus Meningkat di Argentina",url:"https://bisik.id/read/hantavirus-pada-mv-hondius-kasus-meningkat-di-argentina-1778647789246"},
+  {d:"2026-05-11",src:"Science News",c:"US",en:1,top:1,t:"Some South American rodent-borne viruses may spread as climate warms",url:"https://www.sciencenews.org/article/rodent-arenaviruses-hantavirus-climate"},
+  {d:"2026-05-11",src:"CafeBiz",c:"Vietnam",en:0,t:"Giới khoa học cảnh báo: Biến đổi khí hậu đang “đánh thức” những virus chết người từ loài gặm nhấm",url:"https://cafebiz.vn/gioi-khoa-hoc-canh-bao-bien-doi-khi-hau-dang-danh-thuc-nhung-virus-chet-nguoi-tu-loai-gam-nham-176260511151205814.chn"},
+  {d:"2026-05-11",src:"Markettimes",c:"Vietnam",en:0,t:"Giới khoa học cảnh báo: Biến đổi khí hậu đang “đánh thức” những virus chết người từ loài gặm nhấm",url:"https://markettimes.vn/gioi-khoa-hoc-canh-bao-bien-doi-khi-hau-dang-danh-thuc-nhung-virus-chet-nguoi-tu-loai-gam-nham-117804.html"},
+  {d:"2026-05-09",src:"Yahoo! News Taiwan",c:"Taiwan",en:0,t:"漢他病毒登郵輪釀3死悲劇 專家曝1關鍵原因害老鼠擴散",url:"https://tw.news.yahoo.com/%E6%BC%A2%E4%BB%96%E7%97%85%E6%AF%92%E7%99%BB%E9%83%B5%E8%BC%AA%E9%87%803%E6%AD%BB%E6%82%B2%E5%8A%87-%E5%B0%88%E5%AE%B6%E6%9B%9D1%E9%97%9C%E9%8D%B5%E5%8E%9F%E5%9B%A0%E5%AE%B3%E8%80%81%E9%BC%A0%E6%93%B4%E6%95%A3-064220728.html"},
+  {d:"2026-05-07",src:"Geographical",c:"UK",en:1,t:"How climate change could increase the risk of rodent-borne diseases like hantavirus",url:"https://geographical.co.uk/news/how-climate-change-could-increase-the-risk-of-rodent-borne-diseases-like-hantavirus"},
+  {d:"2026-05-06",src:"Kompas.com",c:"Indonesia",en:0,t:"Krisis Iklim Perluas Penyebaran Arenavirus, Ancam Jutaan Orang",url:"https://lestari.kompas.com/read/2026/05/06/163638386/krisis-iklim-perluas-penyebaran-arenavirus-ancam-jutaan-orang"},
+  {d:"2026-05-06",src:"Muser Press",c:"Denmark",en:1,t:"Climate change may spread rodent-borne arenaviruses into new parts of South America",url:"https://www.muser.press/2026/05/06/climate-change-and-rodent-arenaviruses/"},
+  {d:"2026-05-06",src:"BB.lv",c:"Latvia",en:1,t:"Millions of People in Danger: Hantavirus Outbreak on Cruise Ship is Just the Beginning",url:"https://en.bb.lv/article/technologies/2026/05/06/millions-of-people-in-danger-hantavirus-outbreak-on-cruise-ship-is-just-the-beginning-98458"},
+  {d:"2026-05-05",src:"Earth.com",c:"US",en:1,top:1,t:"Deadly rodent viruses are expanding into new regions as the climate shifts",url:"https://www.earth.com/news/deadly-rodent-viruses-are-expanding-into-new-regions-as-the-climate-shifts/"},
+  {d:"2026-05-05",src:"Daily Mail",c:"UK",en:1,top:1,t:"Hantavirus outbreak could just be the beginning: Scientists issue urgent warning about spillover of other rodent-borne viruses",url:"https://www.dailymail.com/sciencetech/article-15790877/Scientists-warning-rodent-borne-viruses.html"},
+  {d:"2026-05-05",src:"MSN",c:"US",en:1,t:"Hantavirus outbreak could just be the start: Scientists warn of spillover of rodent-borne viruses",url:"https://www.msn.com/en-us/health/other/hantavirus-outbreak-could-just-be-the-start-scientists-warn-of-spillover-of-rodent-borne-viruses/ar-AA22qkaF"},
+  {d:"2026-05-05",src:"Technology Networks",c:"UK",en:1,t:"Climate Change Drives Spread of Rodent-Borne Viruses",url:"https://www.technologynetworks.com/immunology/news/climate-change-drives-spread-of-rodent-borne-viruses-412331"},
+  {d:"2026-05-05",src:"Labcompare",c:"US",en:1,t:"Climate Change Raises Risk of Spillover Events",url:"https://www.labcompare.com/617-News/625516-Climate-Change-Raises-Risk-of-Spillover-Events/"},
+  {d:"2026-05-05",src:"Sierra Sun Times",c:"US",en:1,t:"UC Davis Study Finds Climate Change Increases Spillover Risk of Rodent-Borne Arenaviruses",url:"https://www.goldrushcam.com/sierrasuntimes/index.php/news/local-news/77817-university-of-california-davis-study-finds-climate-change-increases-spillover-risk-of-rodent-borne-arenaviruses"},
+  {d:"2026-05-05",src:"Eurasia Review",c:"US",en:1,t:"Climate Change Increases Spillover Risk Of Rodent-Borne Arenaviruses",url:"https://www.eurasiareview.com/05052026-climate-change-increases-spillover-risk-of-rodent-borne-arenaviruses/"},
+  {d:"2026-05-05",src:"Kompas.id",c:"Indonesia",en:0,t:"Hantavirus, Terduga Sumber Wabah di Kapal Pesiar, dari Hutan ke Global",url:"https://www.kompas.id/artikel/hantavirus-terduga-sumber-wabah-di-kapal-pesiar-dari-hutan-ke-global"},
+  {d:"2026-05-05",src:"World Energy News",c:"Greece",en:0,t:"Η κλιματική αλλαγή αυξάνει τον κίνδυνο μετάδοσης αρενοϊών που μεταδίδονται από τρωκτικά",url:"https://www.worldenergynews.gr/index.php?id=585237"},
+  {d:"2026-05-04",src:"UC Davis",c:"US",en:1,top:1,t:"Climate Change Increases Spillover Risk of Rodent-Borne Arenaviruses (press release)",url:"https://www.ucdavis.edu/climate/news/climate-change-increases-spillover-risk-rodent-borne-arenaviruses"},
+  {d:"2026-05-04",src:"Phys.org",c:"UK",en:1,top:1,t:"Climate change increases spillover risk of rodent-borne arenaviruses, study warns",url:"https://phys.org/news/2026-05-climate-spillover-rodent-borne-arenaviruses.html"},
+  {d:"2026-05-04",src:"News-Medical",c:"UK",en:1,t:"Climate change likely to drive rodent-borne arenaviruses into parts of South America",url:"https://www.news-medical.net/news/20260504/Climate-change-likely-to-drive-rodent-borne-arenaviruses-into-parts-of-South-America.aspx"},
+  {d:"2026-05-04",src:"Scientific Frontline",c:"US",en:1,t:"Climate Change Drives Arenavirus Risk",url:"https://www.sflorg.com/2026/05/epi05042601.html"},
+  {d:"2026-05-04",src:"Scienmag",c:"UK",en:1,t:"Climate Change Amplifies Spillover Risk of Rodent-Borne Arenaviruses",url:"https://scienmag.com/climate-change-amplifies-spillover-risk-of-rodent-borne-arenaviruses/"}
+];
+/* order of names in the "Featured in" strip */
+const STRIP = ["The New York Times","Science News","Live Science","The Independent","Daily Mail","Earth.com","Phys.org","India Today"];
+
+/* ---------- Publications: author name is bolded automatically ---------- */
+const PUBS = [
+  {y:2026,k:"article",star:1,news:1,q:"the outbreak risk of dangerous New World arenaviruses could ride on shifting rodent populations",qs:"UC Davis news release",qu:"https://www.ucdavis.edu/climate/news/climate-change-increases-spillover-risk-rodent-borne-arenaviruses",t:"Climate-driven changes in zoonotic risk of arenaviral hemorrhagic fevers in South America",a:"Kulkarni PS, Flores-Pérez NY, Jian AH, Bird BH, Johnson CK, Uhart M, Pandit PS",j:"npj Viruses 4, 23",doi:"10.1038/s44298-026-00189-2"},
+  {y:2025,k:"article",t:"Climate change impact on human–rodent interfaces: modeling Junín virus reservoir shifts",a:"Flores NY, Kulkarni P, Uhart M, Pandit PS",j:"EcoHealth",doi:"10.1007/s10393-025-01723-z"},
+  {y:2024,k:"article",t:"Economic impacts of constrained replacement heifer supply in dairy herds",a:"Kulkarni PS, Haijema R, Hogeveen H, Steeneveld W, Mourits MCM",j:"Agricultural Systems 217, 103943",doi:"10.1016/j.agsy.2024.103943"},
+  {y:2023,k:"article",t:"Dutch dairy farmers' perspectives on culling reasons and strategies",a:"Kulkarni PS, Mourits M, Slob J, Veldhuis A, Nielen M, Hogeveen H, van Schaik G, Steeneveld W",j:"Preventive Veterinary Medicine 218, 105997",doi:"10.1016/j.prevetmed.2023.105997"},
+  {y:2023,k:"article",t:"Associations between dairy farm performance indicators and culling rates under policy-driven herd size constraints",a:"Kulkarni PS, Mourits M, Nielen M, Steeneveld W",j:"Frontiers in Veterinary Science 10, 1062891",doi:"10.3389/fvets.2023.1062891"},
+  {y:2021,k:"article",t:"Survival analysis of dairy cows in the Netherlands under altering agricultural policy",a:"Kulkarni P, Mourits M, Nielen M, van den Broek J, Steeneveld W",j:"Preventive Veterinary Medicine 193, 105398",doi:"10.1016/j.prevetmed.2021.105398"},
+  {y:2021,k:"article",t:"On the origin of the genetic variation in infectious disease prevalence: genetic analysis of disease status versus infections for digital dermatitis in Dutch dairy cattle",a:"Kulkarni PS, Biemans F, de Jong MCM, Bijma P",j:"Journal of Animal Breeding and Genetics 138(6), 629–642",doi:"10.1111/jbg.12635"},
+  {y:2020,k:"article",t:"Association of semen attributes with FSH-beta gene polymorphism in Holstein-Friesian crossbred bulls from India",a:"Kadam V, Barate A, Shende T, Jadhav S, Kulkarni P, Pawar P, Rangnekar M, Birade H",j:"Haryana Veterinarian 59(2), 231–235",url:"https://www.luvas.edu.in//haryana-veterinarian/download/harvet2020-dec/20.pdf"},
+  {y:2017,k:"article",t:"Genotyping of HF crossbred cattle for beta-casein genes using PCR-RFLP",a:"Shende TC, Kulkarni PS, Pawar P",j:"Indian Research Journal of Extension Education, 105–107",url:"https://shorturl.at/EG6Xz3"},
+  {y:2026,k:"other",follow:1,t:"Ecological cascades and future hantavirus spillover risk in a changing climate",a:"Pandit P, Jian AH, Gupta A, Kulkarni P",j:"bioRxiv preprint",doi:"10.64898/2026.07.13.738318"},
+  {y:2025,k:"other",t:"Downregulation of KRT proteins in the neuroendocrine system of amyotrophic lateral sclerosis with PT150 as a multi-target neuroprotectant",a:"Dunakhe S, Sharma A, Das A, Kulkarni P",j:"bioRxiv preprint",doi:"10.1101/2025.03.18.643927"},
+  {y:2024,k:"other",t:"Dairy cattle replacement under changing agri-environmental policies",a:"Kulkarni PS",j:"PhD thesis, Wageningen University. ISBN 978-94-6447-990-4",doi:"10.18174/642838",pdf:"https://escholarship.org/content/qt246298qt/qt246298qt_noSplash_901536be2763fe6084f6b43f7abc9b70.pdf"},
+  {y:2021,k:"other",t:"Development of a log-normal accelerated failure time model for survival of Dutch dairy cows under altering agricultural policy",a:"Kulkarni PS, Mourits MCM, Nielen M, van den Broek J, Hogeveen H, Steeneveld W",j:"Proceedings of SVEPM 2021",url:"https://bit.ly/40cZXnb"}
+];
+
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = d => new Date(d+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+
+/* coverage */
+const press = [...PRESS].sort((a,b)=>b.d.localeCompare(a.d));
+document.getElementById("n-outlets").textContent = new Set(press.map(p=>p.src)).size;
+document.getElementById("n-countries").textContent = new Set(press.map(p=>p.c)).size;
+const strip = document.getElementById("outlet-strip");
+STRIP.forEach(name=>{
+  const p = press.find(x=>x.src===name); if(!p) return;
+  const li=document.createElement("li");
+  li.innerHTML = p.url ? `<a href="${esc(p.url)}">${esc(name)}</a>` : `<a href="#press-list">${esc(name)}</a>`;
+  strip.appendChild(li);
+});
+let filter="english", expanded=false;
+const list=document.getElementById("press-list"), moreBtn=document.getElementById("press-more");
+function renderPress(){
+  const rows = press.filter(p=>filter==="all"||p.en);
+  const shown = expanded ? rows : rows.slice(0,8);
+  list.innerHTML = shown.map(p=>`<li><time datetime="${p.d}">${fmt(p.d)}</time><span class="src">${esc(p.src)}<small>${esc(p.c)}</small></span>${p.url?`<a href="${esc(p.url)}" lang="${p.en?"en":""}">${esc(p.t)}</a>`:`<span class="hl">${esc(p.t)}</span>`}</li>`).join("");
+  moreBtn.hidden = rows.length<=8;
+  moreBtn.textContent = expanded ? "Show fewer" : `Show all ${rows.length} stories`;
+}
+document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>{
+  filter=b.dataset.filter;
+  document.querySelectorAll("[data-filter]").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  renderPress();
+}));
+moreBtn.addEventListener("click",()=>{expanded=!expanded;renderPress();});
+renderPress();
+
+/* publications */
+const pubList=document.getElementById("pub-list");
+function renderPubs(kind){
+  pubList.innerHTML = PUBS.filter(p=>p.k===kind).map(p=>{
+    const au = esc(p.a).replace(/(Kulkarni (PS|P))/,"<b>$1</b>");
+    const links=[];
+    if(p.doi) links.push(`<a href="https://doi.org/${esc(p.doi)}">DOI ${esc(p.doi)}</a>`);
+    if(p.url) links.push(`<a href="${esc(p.url)}">Link</a>`);
+    if(p.pdf) links.push(`<a href="${esc(p.pdf)}">Free PDF</a>`);
+    if(p.news) links.push(`<a href="#in-the-news">Press coverage (${new Set(PRESS.map(x=>x.src)).size} outlets)</a>`,`<a href="#hantavirus">Hantavirus follow-up</a>`);
+    if(p.follow) links.push(`<a href="#in-the-news">Builds on the arenavirus study</a>`);
+    const pq = p.q ? `<p class="pq">“…${esc(p.q)}.”<cite>From the <a href="${esc(p.qu)}">${esc(p.qs)}</a></cite></p>` : "";
+    return `<li><span class="yr">${p.y}</span><div><span class="t">${esc(p.t)}${p.star?'<span class="flag">In the news</span>':''}${p.follow?'<span class="flag">Follow-up</span>':''}</span><div class="au">${au}</div><div class="j"><em>${esc(p.j)}</em></div>${pq}<div class="links">${links.join("")}</div></div></li>`;
+  }).join("");
+}
+document.querySelectorAll("[data-pub]").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll("[data-pub]").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  renderPubs(b.dataset.pub);
+}));
+renderPubs("article");
+
+/* email assembled in the browser to keep it away from scrapers */
+const u="pskul", h="ucdavis.edu", e=document.getElementById("email-link");
+e.textContent=u+"@"+h; e.href="mailto:"+u+"@"+h;
+document.getElementById("yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
