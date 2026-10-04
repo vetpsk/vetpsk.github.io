@@ -1,3 +1,0 @@
-# vetpsk.github.io
-
-![screenshot](.)
