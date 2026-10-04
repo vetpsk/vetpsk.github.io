@@ -150,6 +150,22 @@ blockquote footer{font-family:var(--sans);font-size:.85rem;color:var(--muted)}
 .pill{font-family:var(--sans);font-size:.72rem;font-weight:600;background:var(--tag);color:var(--accent);padding:.12rem .5rem;border-radius:999px;margin-left:.35rem;vertical-align:.1em}
 .rows li.highlight .what{font-weight:600}
 
+/* projects: coming soon + thesis cover */
+.project .soon{font-style:italic;color:var(--muted);font-size:.95rem}
+.with-cover{display:grid;grid-template-columns:96px 1fr;gap:1rem;align-items:start}
+.cover{display:block;border-radius:4px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.12),0 6px 16px -6px rgba(0,0,0,.25);transform:rotate(-1.5deg);transition:transform .2s}
+.cover:hover{transform:rotate(0)}
+.cover img{width:100%;height:auto}
+@media (max-width:420px){.with-cover{grid-template-columns:1fr}.cover{width:120px}}
+
+/* peer review */
+.review .subhead{margin-top:clamp(2.5rem,5vw,3.5rem)}
+.review-sum{font-family:var(--sans);color:var(--muted)}
+.review-sum b{color:var(--ink);font-size:1.25rem}
+.journals{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.55rem}
+.journals li{font-family:var(--sans);font-size:.92rem;padding:.4rem .5rem .4rem .85rem;border:1px solid var(--rule);border-radius:999px;display:inline-flex;align-items:center;gap:.5rem}
+.journals span{font-size:.78rem;font-weight:600;background:var(--tag);color:var(--accent);border-radius:999px;min-width:1.6rem;text-align:center;padding:.1rem .4rem}
+
 /* outlets strip */
 .outlets{margin:2.75rem 0 0;padding:1.5rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .outlets p{font-family:var(--sans);font-size:.85rem;color:var(--muted);margin:0 0 .75rem}
@@ -402,8 +418,8 @@ footer.foot{font-family:var(--sans);font-size:.82rem;color:var(--muted);padding:
     <div class="threads">
       <div class="thread now">
         <div class="when">2023 to now, UC Davis</div>
-        <h3>Climate change and zoonotic spillover</h3>
-        <p>In the EpiPandit Lab and the One Health Institute, I model how shifting climate and land use change the chance that a virus jumps from wildlife or livestock to people.</p>
+        <h3>One Health disease modeling</h3>
+        <p>In the EpiPandit Lab and the One Health Institute, I model diseases at the interface of wildlife, livestock, and people, from climate-driven spillover to outbreak burden on farms.</p>
         <div class="project">
           <h4>AtlasArena</h4>
           <p class="meta">Wellcome Trust, PI Dr. Pranav Pandit</p>
@@ -414,15 +430,35 @@ footer.foot{font-family:var(--sans);font-size:.82rem;color:var(--muted);padding:
           <p class="meta">USDA, PI Dr. Pranav Pandit</p>
           <p>Building a nested agent-based model of how highly pathogenic avian influenza moves within and between dairy herds, and estimating its transmission parameters from the California outbreak.</p>
         </div>
+        <div class="project">
+          <h4>Interactive web tool for simulating HPAI outbreaks in dairy herds</h4>
+          <p class="soon">Details coming soon</p>
+        </div>
+        <div class="project">
+          <h4>Burden of the HPAI outbreak in dairy cows</h4>
+          <p class="soon">Details coming soon</p>
+        </div>
+        <div class="project">
+          <h4>Drivers of failure to thrive in newborn piglets</h4>
+          <p class="soon">Details coming soon</p>
+        </div>
+        <div class="project">
+          <h4>Foundation models for zoonotic viral genomes</h4>
+          <p class="soon">Details coming soon</p>
+        </div>
       </div>
       <div class="thread">
         <div class="when">2017 to 2024, Wageningen and Utrecht</div>
         <h3>Dairy herd health, economics, and policy</h3>
         <p>My PhD asked how Dutch dairy farmers decide which cows to replace, and how environmental policies that cap herd sizes change those decisions and their costs.</p>
-        <div class="project">
+        <div class="project with-cover">
+          <a class="cover" href="https://escholarship.org/content/qt246298qt/qt246298qt_noSplash_901536be2763fe6084f6b43f7abc9b70.pdf" aria-label="Read the PhD thesis (PDF)"><img src="images/thesis_cover.jpg" alt="Cover of the PhD thesis Dairy cattle replacement under changing agri-environmental policies" width="454" height="640" loading="lazy" onerror="this.parentElement.remove()"></a>
+          <div>
           <h4>Replacement decisions under policy constraints</h4>
           <p class="meta">Joint PhD, Wageningen University &amp; Utrecht University</p>
           <p>Survival analysis of national cow records, farmer surveys, and dynamic programming models of herd economics. The thesis, <a href="https://escholarship.org/content/qt246298qt/qt246298qt_noSplash_901536be2763fe6084f6b43f7abc9b70.pdf">Dairy cattle replacement under changing agri-environmental policies</a>, is free to read.</p>
+          <p class="meta" style="margin-top:.4rem">Published by Wageningen University, 2024. ISBN 978-94-6447-990-4. DOI <a href="https://doi.org/10.18174/642838">10.18174/642838</a></p>
+          </div>
         </div>
         <div class="project">
           <h4>Genetics of infectious disease</h4>
@@ -480,9 +516,9 @@ footer.foot{font-family:var(--sans);font-size:.82rem;color:var(--muted);padding:
     <div>
       <h2>Teaching</h2>
       <p class="lede">Statistics and epidemiology for veterinary and public health students.</p>
-      <div class="course"><div class="code">MPM 204</div><div class="role" style="color:var(--ink)">Applied Population Statistics III</div><div class="role">Lecturer, UC Davis</div><p>Student evaluations of <span class="score">4.85/5</span> and <span class="score">4.9/5</span> from the 2024 and 2025 classes.</p></div>
+      <div class="course"><div class="code">MPM 204</div><div class="role" style="color:var(--ink)">Applied Population Statistics III</div><div class="role">Lecturer, classes of 2024, 2025 and 2026, UC Davis</div><p>Student evaluations of <span class="score">4.85/5</span> (2024) and <span class="score">4.9/5</span> (2025); 2026 evaluations pending.</p></div>
       <div class="course"><div class="code">PHR/SPH 266</div><div class="role">Instructor of record, Spring quarter, UC Davis</div></div>
-      <div class="course"><div class="code">VET 401</div><div class="role" style="color:var(--ink)">Scientific inference</div><div class="role">Discussion facilitator, DVM classes of 2028 and 2029, UC Davis</div></div>
+      <div class="course"><div class="code">VET 401</div><div class="role" style="color:var(--ink)">Scientific inference</div><div class="role">Lead lecturer and discussion facilitator, DVM class of 2030; discussion facilitator, DVM classes of 2028 and 2029, UC Davis</div></div>
       <div class="course"><div class="code">MPM 200</div><div class="role" style="color:var(--ink)">Information management for epidemiologists</div><div class="role">Guest lecturer, UC Davis</div></div>
       <div class="course"><div class="code">QVE 20306</div><div class="role" style="color:var(--ink)">Veterinary epidemiology and economics</div><div class="role">Teaching assistant, Wageningen University</div></div>
       <p style="margin-top:1.25rem;font-size:.95rem;color:var(--muted)">I've also supervised graduate and undergraduate theses, and wrote for the <a href="https://www.academictransfer.com/en/blog/author/pranav-s-kulkarni/">Academic Transfer blog</a> from 2019 to 2024.</p>
@@ -495,13 +531,29 @@ footer.foot{font-family:var(--sans);font-size:.82rem;color:var(--muted);padding:
     <div>
       <h2>Background</h2>
       <p>I trained as a veterinarian in India and spent a year in large-animal practice before moving into epidemiology.</p>
-      <p>I'm an invited full member of Sigma Xi, review for Web of Science journals and ISESSAH, and am active in the Open Science Community Utrecht.</p>
+      <p>I'm an invited full member of Sigma Xi, served on the scientific committee for ISESSAH 2026 in Bangkok, Thailand, and am active in the Open Science Community Utrecht.</p>
     </div>
     <ul class="bg-list">
       <li><b>Postdoctoral researcher</b><span>One Health Institute and Dept. of Population Health &amp; Reproduction, UC Davis, 2023 to now</span></li>
       <li><b>PhD, 2024</b><span>Wageningen University &amp; Research and Utrecht University (joint degree)</span></li>
       <li><b>MSc, 2018</b><span>Wageningen University &amp; Research</span></li>
       <li><b>BVSc &amp; AH, 2015</b><span>Maharashtra Animal and Fishery Sciences University, Nagpur</span></li>
+    </ul>
+  </div>
+  <div class="wrap review">
+    <h3 class="subhead">Peer review</h3>
+    <p class="review-sum"><b>25</b> manuscripts reviewed for <b>10</b> journals</p>
+    <ul class="journals">
+        <li>Journal of Dairy Science <span>7</span></li>
+        <li>Preventive Veterinary Medicine <span>6</span></li>
+        <li>PLOS Global Public Health <span>3</span></li>
+        <li>Livestock Science <span>2</span></li>
+        <li>Veterinary and Animal Science <span>2</span></li>
+        <li>Agricultural Systems <span>1</span></li>
+        <li>BMC Veterinary Research <span>1</span></li>
+        <li>F1000Research <span>1</span></li>
+        <li>Frontiers in Veterinary Science <span>1</span></li>
+        <li>Preventive Veterinary Medicine: Regional Studies and Reports <span>1</span></li>
     </ul>
   </div>
 </section>
